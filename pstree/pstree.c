@@ -111,11 +111,11 @@ void print_pstree() {
        
        /*allocate memory for the process stat*/
        buffer = calloc(1, lSize+1);
-       if(!buffer)fclose(fp),fputs("memory alloc fails",stderr), exit(1);
+       if(!buffer)fclose(fp),fputs("memory alloc fails1\n",stderr), exit(1);
 
        /*copy the file into the buffer*/
        if(1!=fread(buffer, lSize, 1, fp))
-           fclose(fp),free(buffer),fputs("entire read faild", stderr),exit(1);
+           fclose(fp),free(buffer),fputs("entire read fails2\n", stderr),exit(1);
 
        /* do some work here*/
 
