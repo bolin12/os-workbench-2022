@@ -92,7 +92,7 @@ void print_pstree() {
         strcat(stat_path, in_file->d_name);
         strcat(stat_path, "/stat");
         printf("%s\n", stat_path);
-/***********************************************/
+        /***********************************************/
 
 
 
@@ -105,28 +105,28 @@ void print_pstree() {
             perror("File opening failed");
             exit(1);
         }
-       fseek(fp, 0L, SEEK_END);
-       lSize = ftell(fp);
-       rewind(fp);
-       
-       /*allocate memory for the process stat*/
-       buffer = calloc(1, lSize+1);
-       if(!buffer)fclose(fp),fputs("memory alloc fails1\n",stderr), exit(1);
+        fseek(fp, 0L, SEEK_END);
+        lSize = ftell(fp);
+        rewind(fp);
 
-       /*copy the file into the buffer*/
-       if(1!=fread(buffer, lSize, 1, fp))
-           fclose(fp),free(buffer),fputs("entire read fails2\n", stderr),exit(1);
+        /*allocate memory for the process stat*/
+        buffer = calloc(1, lSize+1);
+        if(!buffer)fclose(fp),fputs("memory alloc fails1\n",stderr), exit(1);
 
-       /* do some work here*/
+        /*copy the file into the buffer*/
+        if(1!=fread(buffer, lSize, 1, fp))
+            fclose(fp),free(buffer),fputs("entire read fails2\n", stderr),exit(1);
 
-
+        /* do some work here*/
 
 
-       /* finish */
-       fclose(fp);
-       free(buffer);
 
-        
+
+        /* finish */
+        fclose(fp);
+        free(buffer);
+
+
         while(EOF!=(c = fgetc(fp))){
             putchar(c);
         }
