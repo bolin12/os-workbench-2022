@@ -105,13 +105,13 @@ void print_pstree() {
             perror("File opening failed");
             exit(1);
         }
-        fseek(fp, 0L, SEEK_END);
-        lSize = ftell(fp);
-        rewind(fp);
-
-        /*allocate memory for the process stat*/
-        buffer = calloc(1, lSize+1);
-        if(!buffer)fclose(fp),fputs("memory alloc fails1\n",stderr), exit(1);
+//        fseek(fp, 0L, SEEK_END);
+//        lSize = ftell(fp);
+//        rewind(fp);
+//
+//        /*allocate memory for the process stat*/
+//        buffer = calloc(1, lSize+1);
+//        if(!buffer)fclose(fp),fputs("memory alloc fails1\n",stderr), exit(1);
 
         /*copy the file into the buffer*/
         if(1!=fread(buffer, lSize, 1, fp))
