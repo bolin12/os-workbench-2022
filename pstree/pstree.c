@@ -100,13 +100,14 @@ void print_pstree() {
         int  lSize;
         char * buffer ;
 
-        fp = fopen("proc/1/stat","r");
+        fp = fopen(stat_path,"r");
         if(!fp){
             perror("File opening failed");
             exit(1);
         }
         fseek(fp, 0, SEEK_END);
         lSize = ftell(fp);
+        printf("lsize:%d\n",lSize);
         fseek(fp, 0, SEEK_SET);
         //rewind(fp);
 
