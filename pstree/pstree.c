@@ -100,7 +100,8 @@ void print_pstree() {
         long  lSize;
         char * buffer ;
 
-        FILE *fp = fopen(stat_path,"r");
+        char * tmp_stat_path = "run.sh";
+        FILE *fp = fopen(tmp_stat_path,"r");
         if(!fp){
             perror("File opening failed");
             exit(1);
