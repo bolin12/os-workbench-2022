@@ -27,7 +27,7 @@ const char *version = "pstree (PSmisc) BLmimic\n\
                        For more information about these matters, see the files named COPYING.";
 int flag=2;
 void print_pstree();
-FILE * fp;
+
 DIR * FD;
 
 
@@ -100,7 +100,7 @@ void print_pstree() {
         int  lSize;
         char * buffer ;
 
-        fp = fopen(stat_path,"r");
+        FILE *fp = fopen(stat_path,"r");
         if(!fp){
             perror("File opening failed");
             exit(1);
