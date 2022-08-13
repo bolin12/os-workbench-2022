@@ -120,7 +120,6 @@ void print_pstree() {
         //fclose(fp),free(buffer),fputs("entire read fails2\n", stderr),exit(1);
         fread(buffer, 1,  lSize, fp);
 
-        printf("size of buffer is: %d\n",lSize);
         /* do some work here*/
 
         printf("*********************\n%s*********************\n",buffer); 
