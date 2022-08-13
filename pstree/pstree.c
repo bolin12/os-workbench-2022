@@ -128,14 +128,14 @@ void print_pstree() {
             printf("%c", buffer[i]);
         }
 
-
-        fclose(fp);
-        free(buffer);
-
-
         while(EOF!=(c = fgetc(fp))){
             putchar(c);
         }
+
+        fclose(fp);
+        free(buffer);
+        exit(1);
+
     } 
 
 }
