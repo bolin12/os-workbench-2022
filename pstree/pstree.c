@@ -107,7 +107,7 @@ void print_pstree() {
         }
         fseek(fp, 0L, SEEK_END);
         lSize = ftell(fp);
-        printf("lsize:%d\n",lSize);
+        printf("lsize:%ld\n",lSize);
         fseek(fp, 0, SEEK_SET);
         //rewind(fp);
 
