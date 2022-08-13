@@ -105,7 +105,7 @@ void print_pstree() {
             perror("File opening failed");
             exit(1);
         }
-        fseek(fp, 0L, SEEK_END);
+        fseek(fp, 0, SEEK_END);
         lSize = ftell(fp);
         fseek(fp, 0, SEEK_SET);
         //rewind(fp);
@@ -117,7 +117,8 @@ void print_pstree() {
         /*copy the file into the buffer*/
         //if(lSize!=fread(buffer, sizeof(char), lSize, fp))
         //fclose(fp),free(buffer),fputs("entire read fails2\n", stderr),exit(1);
-        fread(buffer, lSize,  1, fp);
+        printf("size of buffer is: %d\n",lSize);
+        fread(buffer, 1,  lSize, fp);
 
         /* do some work here*/
 
