@@ -124,10 +124,6 @@ void print_pstree() {
 
 
 
-        while(EOF!=(c = fgetc(fp))){
-            putchar(c);
-        }
-        /* finish */
         fclose(fp);
         free(buffer);
 
