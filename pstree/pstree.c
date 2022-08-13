@@ -107,10 +107,11 @@ void print_pstree() {
         }
         fseek(fp, 0L, SEEK_END);
         lSize = ftell(fp);
-        rewind(fp);
+        fseek(fp, 0, SEEK_SET);
+        //rewind(fp);
 
         /*allocate memory for the process stat*/
-        buffer = calloc(1, lSize+1);
+        buffer = malloc(lSize); 
         if(!buffer)fclose(fp),fputs("memory alloc fails1\n",stderr), exit(1);
 
         /*copy the file into the buffer*/
