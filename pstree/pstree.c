@@ -119,7 +119,7 @@ void print_pstree() {
 
         /* do some work here*/
         
-        
+       printf("*********************\n%s*********************\n",buffer); 
 
 
 
