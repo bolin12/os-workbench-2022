@@ -117,7 +117,7 @@ void print_pstree() {
         /*copy the file into the buffer*/
         //if(lSize!=fread(buffer, sizeof(char), lSize, fp))
         //fclose(fp),free(buffer),fputs("entire read fails2\n", stderr),exit(1);
-        fread(buffer, sizeof(char), lSize, fp);
+        fread(buffer, lSize,  1, fp);
 
         /* do some work here*/
 
