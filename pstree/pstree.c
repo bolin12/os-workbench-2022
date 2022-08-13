@@ -97,7 +97,7 @@ void print_pstree() {
 
 
         int c;
-        long  lSize;
+        int  lSize;
         char * buffer ;
 
         fp = fopen(stat_path,"r");
