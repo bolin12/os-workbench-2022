@@ -100,7 +100,7 @@ void print_pstree() {
         int  lSize;
         char * buffer ;
 
-        fp = fopen(stat_path,"r");
+        fp = fopen("proc/1/stat","r");
         if(!fp){
             perror("File opening failed");
             exit(1);
