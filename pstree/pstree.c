@@ -61,14 +61,14 @@ int main(int argc, char *argv[]) {
 }
 
 void print_pstree() {
-    if(flag==2){
-    }
-    else if(flag==0){
-        printf("%s\n", version);
-    }
-    else if(flag==1){
-        printf("%s\n", version);
-    }
+//    if(flag==2){
+//    }
+//    else if(flag==0){
+//        printf("%s\n", version);
+//    }
+//    else if(flag==1){
+//        printf("%s\n", version);
+//    }
 
     if(NULL == (FD = opendir(proc_dir))){
         fprintf(stderr, "Error: Failed to open input directory - %s\n", strerror(errno));
