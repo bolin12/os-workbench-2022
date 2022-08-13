@@ -105,7 +105,7 @@ void print_pstree() {
             perror("File opening failed");
             exit(1);
         }
-        fseek(fp, 0, SEEK_END);
+        fseek(fp, 0L, SEEK_END);
         lSize = ftell(fp);
         printf("lsize:%d\n",lSize);
         fseek(fp, 0, SEEK_SET);
