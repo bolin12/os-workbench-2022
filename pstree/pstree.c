@@ -140,19 +140,19 @@ void print_pstree() {
             if(space_idx==3)break;
 
             printf("%s\n",token);
-            int pid,ppid;
+            //int pid,ppid;
             char *pname;
 
 
-            if(space_idx==0){
-                pid = atoi(token); 
-            }
-            if(space_idx==1){
-                //strcpy(pname, token); 
-            }
-            if(space_idx==2){
-                ppid = atoi(token);
-            }
+//            if(space_idx==0){
+//                pid = atoi(token); 
+//            }
+//            if(space_idx==1){
+//                //strcpy(pname, token); 
+//            }
+//            if(space_idx==2){
+//                ppid = atoi(token);
+//            }
             space_idx++;
         }
         free(tofree);
