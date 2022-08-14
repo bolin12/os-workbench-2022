@@ -138,7 +138,7 @@ void print_pstree() {
         tofree = string;
         while(NULL!=(token = strsep(&string, " "))){
             printf("space_idx:%d\n",space_idx);
-            if(space_idx==3)break;
+            if(space_idx==4)break;
 
             printf("%s\n",token);
             //int pid,ppid;
