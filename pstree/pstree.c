@@ -137,6 +137,7 @@ void print_pstree() {
         string = strdup(buffer);
         tofree = string;
         while(NULL!=(token = strsep(&string, ","))){
+            printf("space_idx:%d\n",space_idx);
             if(space_idx==3)break;
 
             printf("%s\n",token);
