@@ -8,12 +8,11 @@
 #include <assert.h>
 #include <string.h>
 
-struct ProcTree{
+typedef struct ProcTree{
     size_t pid;
     struct ProcTree *parent;
 
-};
-
+}ptree;
 
 
 
@@ -127,13 +126,13 @@ void print_pstree() {
             cur_idx++; 
 
         }
-        //        printf("%s\n", buffer);
 
         int space_idx=0;
         char* token;
         char* string;
         char* tofree;
 
+        ptree *root = malloc(sizeof(ptree));
         string = strdup(buffer);
         tofree = string;
         while(NULL!=(token = strsep(&string, " "))){
@@ -141,19 +140,19 @@ void print_pstree() {
             if(space_idx==4)break;
 
             printf("%s\n",token);
-            //int pid,ppid;
+            int pid,ppid;
             char *pname;
 
 
-//            if(space_idx==0){
-//                pid = atoi(token); 
-//            }
-//            if(space_idx==1){
-//                //strcpy(pname, token); 
-//            }
-//            if(space_idx==2){
-//                ppid = atoi(token);
-//            }
+            if(space_idx==0){
+                pid = atoi(token); 
+            }
+            if(space_idx==1){
+                strcpy(pname, token); 
+            }
+            if(space_idx==2){
+                ppid = atoi(token);
+            }
             space_idx++;
         }
         free(tofree);
