@@ -127,7 +127,7 @@ void print_pstree() {
             }
             printf("%d\n",c);
             putchar(c);
-
+            printf("\n");
         }
         //printf("%s\n", buffer);
         fclose(fp);
