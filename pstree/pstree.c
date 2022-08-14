@@ -148,13 +148,14 @@ void print_pstree() {
                 pid = atoi(token); 
             }
             if(space_idx==1){
-                strcpy(pname, token); 
+                //strcpy(pname, token); 
             }
             if(space_idx==2){
 
             }
             space_idx++;
         }
+        free(tofree);
         fclose(fp);
         free(buffer);
         exit(1);
