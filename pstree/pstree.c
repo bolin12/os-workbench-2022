@@ -11,9 +11,12 @@
 typedef struct ProcTree{
     size_t pid;
     struct ProcTree *parent;
-
+    struct ProcTree **chile;
 }ptree;
 
+enum {
+    VERSION, BYNAME, PIDCONTAIN
+};
 
 
 const char *proc_dir = "/proc";
@@ -24,7 +27,7 @@ const char *version = "pstree (PSmisc) BLmimic\n\
                        This is free software, and you are welcome to redistribute it under\n\
                        the terms of the GNU General Public License.\n\
                        For more information about these matters, see the files named COPYING.";
-int flag=2;
+int flag=BYNAME;
 void print_pstree();
 
 DIR * FD;
@@ -34,7 +37,7 @@ struct dirent * in_file;
 
 int main(int argc, char *argv[]) {
     assert(argv[0]);
-
+    ptree * root = malloc(sizeof(ptree));
 
     // printf("%s\n", argv[0]);
     for (int i = 1; i < argc; i++) {
@@ -45,11 +48,11 @@ int main(int argc, char *argv[]) {
             return 0;
         }
         else if(!strcmp(argv[i], "-p")){
-            flag=0;
+            flag=PIDCONTAIN;
             print_pstree();
             return 0;
         }else if(!strcmp(argv[i], "-n")){
-            flag = 1;
+            flag = BYNAME;
             print_pstree();
         }else{
             printf("No such argument: %s\n", argv[i]);
@@ -60,14 +63,11 @@ int main(int argc, char *argv[]) {
 }
 
 void print_pstree() {
-    //    if(flag==2){
-    //    }
-    //    else if(flag==0){
-    //        printf("%s\n", version);
-    //    }
-    //    else if(flag==1){
-    //        printf("%s\n", version);
-    //    }
+    if(flag==VERSION){
+
+        printf("%s\n", version);
+        return;
+    }
 
     if(NULL == (FD = opendir(proc_dir))){
         fprintf(stderr, "Error: Failed to open input directory - %s\n", strerror(errno));
@@ -132,7 +132,7 @@ void print_pstree() {
         char* string;
         char* tofree;
 
-        ptree *root = malloc(sizeof(ptree));
+        ptree *leaf = malloc(sizeof(ptree));
         string = strdup(buffer);
         tofree = string;
         while(NULL!=(token = strsep(&string, " "))){
@@ -150,7 +150,7 @@ void print_pstree() {
             if(space_idx==1){
                 strcpy(pname, token); 
             }
-            if(space_idx==2){
+            if(space_idx==3){
                 ppid = atoi(token);
             }
             space_idx++;
