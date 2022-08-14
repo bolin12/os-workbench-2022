@@ -151,7 +151,7 @@ void print_pstree() {
                 //strcpy(pname, token); 
             }
             if(space_idx==2){
-
+                ppid = atoi(token);
             }
             space_idx++;
         }
