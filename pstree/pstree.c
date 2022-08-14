@@ -126,11 +126,8 @@ void print_pstree() {
             cur_idx++;
             if(c == ' '){
             }
-            printf("%c\n",c);
-            putchar(c);
-            printf("\n");
         }
-        //printf("%s\n", buffer);
+        printf("%s\n", buffer);
         fclose(fp);
         free(buffer);
         exit(1);
