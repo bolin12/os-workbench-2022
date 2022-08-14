@@ -122,12 +122,13 @@ void print_pstree() {
 
         int cur_idx = 0;
         while(EOF!=(c = fgetc(fp))){
-            buffer[cur_idx] = c;
+            buffer[cur_idx] = c+'\0';
+            cur_idx++;
             if(c == ' '){
             }
-            printf("%d\n",c);
+            printf("%c\n",c);
             putchar(c);
-            printf("\n");
+            printf("\n")
         }
         //printf("%s\n", buffer);
         fclose(fp);
