@@ -120,14 +120,26 @@ void print_pstree() {
         /* do some work here*/
 
 
+        chat * tmp;
+
         int cur_idx = 0;
         while(EOF!=(c = fgetc(fp))){
             buffer[cur_idx] = c;
-            cur_idx++;
-            if(c == ' '){
+            cur_idx++; 
+
+        }
+        //        printf("%s\n", buffer);
+
+        int space_idx=0;
+        while(space_idx!=3){
+            tmp = strtok(buffer," ");
+
+            int pid,ppid;
+            char *pname;
+            if(space_idx==0){
+                 
             }
         }
-        printf("%s\n", buffer);
         fclose(fp);
         free(buffer);
         exit(1);
