@@ -129,7 +129,7 @@ void print_pstree() {
 
         printf("total string:\n%s\n",string);
         while(NULL!=(token = strsep(&string, " "))){
-            printf("space_idx:%d\n",space_idx);
+            //printf("space_idx:%d\n",space_idx);
             if(space_idx==4)break;
 
             if(space_idx==0){
@@ -146,8 +146,9 @@ void print_pstree() {
 
             space_idx++;
         }
-        printf("pid:%d\n",pid);
-        printf("token:%s\n", pname);
+        printf("proc_stat:%d",in_file->d_name);
+        printf("pid:%d\t",pid);
+        printf("token:%s\t", pname);
         printf("ppid:%d\n", ppid);
 
         free(tofree);
