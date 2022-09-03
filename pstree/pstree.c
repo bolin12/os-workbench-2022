@@ -124,15 +124,15 @@ void print_pstree() {
         string = strdup(buffer);
         tofree = string;
 
+        int pid,ppid;
+        char *pname;
+
         printf("total string:\n%s\n",string);
         while(NULL!=(token = strsep(&string, " "))){
             printf("space_idx:%d\n",space_idx);
             if(space_idx==4)break;
 
             printf("token:%s\n",token);
-
-            int pid,ppid;
-            char *pname;
 
 
             if(space_idx==0){
