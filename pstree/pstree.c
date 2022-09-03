@@ -9,9 +9,9 @@
 #include <string.h>
 
 typedef struct ProcTree{
-    size_t pid;
+    size_t pid, ppid;
     struct ProcTree *parent;
-    struct ProcTree **chile;
+    struct ProcTree **childs;
 }ptree;
 
 enum {
@@ -38,8 +38,10 @@ struct dirent * in_file;
 int main(int argc, char *argv[]) {
     assert(argv[0]);
     ptree * root = malloc(sizeof(ptree));
+    root->pid = 0;
+    root->ppid = -1;
 
-    // printf("%s\n", argv[0]);
+
     for (int i = 1; i < argc; i++) {
         assert(argv[i]);
 
@@ -106,20 +108,6 @@ void print_pstree() {
         }
 
 
-        /* next no use cause proc/[number]/stat is not just txt file 
-         * for future research
-         */
-
-
-        //fseek(fp, 0L, SEEK_END);
-        //    lSize = ftell(fp);
-        //    printf("lsize:%ld\n",lSize);
-        //fseek(fp, 0, SEEK_SET);
-
-        /* do some work here*/
-
-
-
         int cur_idx = 0;
         while(EOF!=(c = fgetc(fp))){
             buffer[cur_idx] = c;
@@ -140,6 +128,7 @@ void print_pstree() {
             if(space_idx==4)break;
 
             printf("%s\n",token);
+
             int pid,ppid;
             char *pname;
 
@@ -153,7 +142,18 @@ void print_pstree() {
             if(space_idx==3){
                 ppid = atoi(token);
             }
-            space_idx++;
+
+            printf("%d\n",pid);
+            printf("%s\n", pname);
+            printf("%d\n", ppid);
+            
+
+            
+
+
+
+
+                space_idx++;
         }
         free(tofree);
         fclose(fp);
