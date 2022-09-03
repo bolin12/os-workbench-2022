@@ -132,9 +132,6 @@ void print_pstree() {
             printf("space_idx:%d\n",space_idx);
             if(space_idx==4)break;
 
-            printf("token:%s\n",token);
-
-
             if(space_idx==0){
                 pid = atoi(token); 
             }
