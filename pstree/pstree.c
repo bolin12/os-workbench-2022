@@ -145,10 +145,6 @@ void print_pstree() {
                 ppid = atoi(token);
             }
 
-            printf("finish:%d\n",space_idx);
-
-
-
 
 
             space_idx++;
