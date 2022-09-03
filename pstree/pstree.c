@@ -146,7 +146,7 @@ void print_pstree() {
 
             space_idx++;
         }
-        printf("proc_stat:%d",in_file->d_name);
+        printf("proc_stat:%d",atoi(in_file->d_name));
         printf("pid:%d\t",pid);
         printf("token:%s\t", pname);
         printf("ppid:%d\n", ppid);
