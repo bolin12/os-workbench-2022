@@ -150,7 +150,7 @@ void print_pstree() {
             space_idx++;
         }
         printf("pid:%d\n",pid);
-        printf("token:%s\n", token);
+        printf("token:%s\n", pname);
         printf("ppid:%d\n", ppid);
 
         free(tofree);
