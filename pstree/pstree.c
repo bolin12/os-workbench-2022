@@ -124,7 +124,7 @@ void print_pstree() {
         string = strdup(buffer);
         tofree = string;
         
-        printf("total string:%s\n",string);
+        printf("total string:\n%s\n",string);
         while(NULL!=(token = strsep(&string, " "))){
             printf("space_idx:%d\n",space_idx);
             if(space_idx==4)break;
