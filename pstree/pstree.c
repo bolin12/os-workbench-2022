@@ -123,7 +123,7 @@ void print_pstree() {
         ptree *leaf = malloc(sizeof(ptree));
         string = strdup(buffer);
         tofree = string;
-        
+
         printf("total string:\n%s\n",string);
         while(NULL!=(token = strsep(&string, " "))){
             printf("space_idx:%d\n",space_idx);
@@ -145,18 +145,18 @@ void print_pstree() {
                 ppid = atoi(token);
             }
 
-            printf("pid:%d\n",pid);
-            printf("token:%s\n", token);
-            printf("ppid:%d\n", ppid);
-            
-
-            
 
 
 
 
-                space_idx++;
+
+
+            space_idx++;
         }
+        printf("pid:%d\n",pid);
+        printf("token:%s\n", token);
+        printf("ppid:%d\n", ppid);
+
         free(tofree);
         fclose(fp);
         free(buffer);
