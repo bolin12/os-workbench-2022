@@ -144,7 +144,7 @@ void print_pstree() {
             }
 
             printf("%d\n",pid);
-            printf("%s\n", pname);
+            printf("%s\n", token);
             printf("%d\n", ppid);
             
 
