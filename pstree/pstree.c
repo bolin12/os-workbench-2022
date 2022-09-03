@@ -125,7 +125,7 @@ void print_pstree() {
         tofree = string;
 
         int pid,ppid;
-        char *pname;
+        char *pname=malloc(32);
 
         printf("total string:\n%s\n",string);
         while(NULL!=(token = strsep(&string, " "))){
@@ -145,7 +145,7 @@ void print_pstree() {
                 ppid = atoi(token);
             }
 
-printf("finish:%d\n",space_idx);
+            printf("finish:%d\n",space_idx);
 
 
 
