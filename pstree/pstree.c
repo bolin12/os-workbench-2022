@@ -160,7 +160,7 @@ void print_pstree() {
         fclose(fp);
         free(buffer);
        // free(string);
-        free(token);
+        //free(token);
         //exit(1);
 
     } 
