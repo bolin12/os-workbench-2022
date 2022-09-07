@@ -128,6 +128,7 @@ void print_pstree() {
         char *pname=malloc(32);
 
         printf("total string:\n%s\n",string);
+
         while(NULL!=(token = strsep(&string, " "))){
             //printf("space_idx:%d\n",space_idx);
             if(space_idx==4)break;
@@ -154,9 +155,11 @@ void print_pstree() {
         free(tofree);
         fclose(fp);
         free(buffer);
-        exit(1);
+        //exit(1);
 
     } 
+
+
 
 }
 
