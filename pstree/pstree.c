@@ -155,6 +155,7 @@ void print_pstree() {
         free(tofree);
         fclose(fp);
         free(buffer);
+        free(pname);
         //exit(1);
 
     } 
