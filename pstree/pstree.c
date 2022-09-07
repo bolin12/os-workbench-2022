@@ -125,7 +125,7 @@ void print_pstree() {
         tofree = string;
 
         int pid,ppid;
-        char *pname=malloc(32);
+        char *pname=malloc(64);
 
         printf("total string:\n%s\n",string);
 
