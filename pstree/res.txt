@@ -1,0 +1,1637 @@
+gcc -m64 -O1 -std=gnu11 -ggdb -Wall -Werror -Wno-unused-result -Wno-unused-value -Wno-unused-variable ./pstree.c -o pstree-64 
+gcc -m32 -O1 -std=gnu11 -ggdb -Wall -Werror -Wno-unused-result -Wno-unused-value -Wno-unused-variable ./pstree.c -o pstree-32 
+pstree-32 test: 
+
+pstree (PSmisc) BLmimic
+                       Copyright (C) 1993-2019 Werner Almesberger and Craig Small
+                        
+                       PSmisc comes with ABSOLUTELY NO WARRANTY.
+                       This is free software, and you are welcome to redistribute it under
+                       the terms of the GNU General Public License.
+                       For more information about these matters, see the files named COPYING.
+/proc/1/stat
+total string:
+1 (systemd) S 0 1 1 0 -1 4194560 32792 2110691 162 9202 164 146 7607 1997 20 0 1 0 12 174350336 3401 18446744073709551615 1 1 0 0 0 0 671173123 4096 1260 0 0 0 17 4 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+proc_stat:1      pid:1	token:(systemd)	ppid:0
+/proc/2/stat
+total string:
+2 (kthreadd) S 0 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 20 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 0 4 0 0 0 0 0 0 0 0 0 0 0 0 0
+260 0 0 0 17 4 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+proc_stat:2      pid:2	token:(kthreadd)	ppid:0
+/proc/3/stat
+total string:
+3 (rcu_gp) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+60 0 0 0 17 4 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+proc_stat:3      pid:3	token:(rcu_gp)	ppid:2
+/proc/4/stat
+total string:
+4 (rcu_par_gp) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 17 4 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+proc_stat:4      pid:4	token:(rcu_par_gp)	ppid:2
+/proc/5/stat
+total string:
+5 (netns) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0
+ 0 0 17 4 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+proc_stat:5      pid:5	token:(netns)	ppid:2
+/proc/7/stat
+total string:
+7 (kworker/0:0H-events_highpri) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0
+
+proc_stat:7      pid:7	token:(kworker/0:0H-events_highpri)	ppid:2
+/proc/10/stat
+total string:
+10 (mm_percpu_wq) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0
+
+proc_stat:10      pid:10	token:(mm_percpu_wq)	ppid:2
+/proc/11/stat
+total string:
+11 (rcu_tasks_rude_) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 20 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0
+
+proc_stat:11      pid:11	token:(rcu_tasks_rude_)	ppid:2
+/proc/12/stat
+total string:
+12 (rcu_tasks_trace) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 20 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0
+
+proc_stat:12      pid:12	token:(rcu_tasks_trace)	ppid:2
+/proc/13/stat
+total string:
+13 (ksoftirqd/0) S 2 0 0 0 -1 69238848 0 0 0 0 3 0 0 0 20 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0
+ 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0
+
+proc_stat:13      pid:13	token:(ksoftirqd/0)	ppid:2
+/proc/14/stat
+total string:
+14 (rcu_sched) I 2 0 0 0 -1 2129984 0 0 0 0 209 0 0 0 20 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 7 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+ 0
+ 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0
+
+proc_stat:14      pid:14	token:(rcu_sched)	ppid:2
+/proc/15/stat
+total string:
+15 (migration/0) S 2 0 0 0 -1 69238848 0 0 0 0 0 1 0 0 -100 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 0 99 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0
+
+proc_stat:15      pid:15	token:(migration/0)	ppid:2
+/proc/16/stat
+total string:
+16 (idle_inject/0) S 2 0 0 0 -1 69238848 0 0 0 0 0 0 0 0 -51 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 0 50 1 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0
+
+proc_stat:16      pid:16	token:(idle_inject/0)	ppid:2
+/proc/17/stat
+total string:
+17 (cpuhp/0) S 2 0 0 0 -1 69238848 0 0 0 0 0 0 0 0 20 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0
+
+proc_stat:17      pid:17	token:(cpuhp/0)	ppid:2
+/proc/18/stat
+total string:
+18 (cpuhp/1) S 2 0 0 0 -1 69239104 0 0 0 0 0 0 0 0 20 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0
+
+proc_stat:18      pid:18	token:(cpuhp/1)	ppid:2
+/proc/19/stat
+total string:
+19 (idle_inject/1) S 2 0 0 0 -1 69238848 0 0 0 0 0 0 0 0 -51 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 1 50 1 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0
+
+proc_stat:19      pid:19	token:(idle_inject/1)	ppid:2
+/proc/20/stat
+total string:
+20 (migration/1) S 2 0 0 0 -1 69238848 0 0 0 0 0 13 0 0 -100 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 1 99 1 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0
+
+proc_stat:20      pid:20	token:(migration/1)	ppid:2
+/proc/21/stat
+total string:
+21 (ksoftirqd/1) S 2 0 0 0 -1 69238848 0 0 0 0 0 3 0 0 20 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0
+0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0
+
+proc_stat:21      pid:21	token:(ksoftirqd/1)	ppid:2
+/proc/23/stat
+total string:
+23 (kworker/1:0H-events_highpri) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:23      pid:23	token:(kworker/1:0H-events_highpri)	ppid:2
+/proc/24/stat
+total string:
+24 (cpuhp/2) S 2 0 0 0 -1 69239104 0 0 0 0 0 0 0 0 20 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 2 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:24      pid:24	token:(cpuhp/2)	ppid:2
+/proc/25/stat
+total string:
+25 (idle_inject/2) S 2 0 0 0 -1 69238848 0 0 0 0 0 0 0 0 -51 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 2 50 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:25      pid:25	token:(idle_inject/2)	ppid:2
+/proc/26/stat
+total string:
+26 (migration/2) S 2 0 0 0 -1 69238848 0 0 0 0 0 14 0 0 -100 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 2 99 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:26      pid:26	token:(migration/2)	ppid:2
+/proc/27/stat
+total string:
+27 (ksoftirqd/2) S 2 0 0 0 -1 69238848 0 0 0 0 0 5 0 0 20 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 2 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0
+ 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:27      pid:27	token:(ksoftirqd/2)	ppid:2
+/proc/29/stat
+total string:
+29 (kworker/2:0H-events_highpri) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 2 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:29      pid:29	token:(kworker/2:0H-events_highpri)	ppid:2
+/proc/30/stat
+total string:
+30 (cpuhp/3) S 2 0 0 0 -1 69239104 0 0 0 0 0 0 0 0 20 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 3 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:30      pid:30	token:(cpuhp/3)	ppid:2
+/proc/31/stat
+total string:
+31 (idle_inject/3) S 2 0 0 0 -1 69238848 0 0 0 0 0 0 0 0 -51 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 3 50 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:31      pid:31	token:(idle_inject/3)	ppid:2
+/proc/32/stat
+total string:
+32 (migration/3) S 2 0 0 0 -1 69238848 0 0 0 0 0 13 0 0 -100 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 3 99 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:32      pid:32	token:(migration/3)	ppid:2
+/proc/33/stat
+total string:
+33 (ksoftirqd/3) S 2 0 0 0 -1 69238848 0 0 0 0 0 1 0 0 20 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 3 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0
+ 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:33      pid:33	token:(ksoftirqd/3)	ppid:2
+/proc/35/stat
+total string:
+35 (kworker/3:0H-events_highpri) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 3 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:35      pid:35	token:(kworker/3:0H-events_highpri)	ppid:2
+/proc/36/stat
+total string:
+36 (cpuhp/4) S 2 0 0 0 -1 69239104 0 0 0 0 0 0 0 0 20 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 4 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:36      pid:36	token:(cpuhp/4)	ppid:2
+/proc/37/stat
+total string:
+37 (idle_inject/4) S 2 0 0 0 -1 69238848 0 0 0 0 0 0 0 0 -51 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 4 50 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:37      pid:37	token:(idle_inject/4)	ppid:2
+/proc/38/stat
+total string:
+38 (migration/4) S 2 0 0 0 -1 69238848 0 0 0 0 0 13 0 0 -100 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 4 99 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:38      pid:38	token:(migration/4)	ppid:2
+/proc/39/stat
+total string:
+39 (ksoftirqd/4) S 2 0 0 0 -1 69238848 0 0 0 0 1 1 0 0 20 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 4 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0
+ 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:39      pid:39	token:(ksoftirqd/4)	ppid:2
+/proc/41/stat
+total string:
+41 (kworker/4:0H-events_highpri) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 4 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:41      pid:41	token:(kworker/4:0H-events_highpri)	ppid:2
+/proc/42/stat
+total string:
+42 (cpuhp/5) S 2 0 0 0 -1 69239104 0 0 0 0 0 0 0 0 20 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 5 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:42      pid:42	token:(cpuhp/5)	ppid:2
+/proc/43/stat
+total string:
+43 (idle_inject/5) S 2 0 0 0 -1 69238848 0 0 0 0 0 0 0 0 -51 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 5 50 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:43      pid:43	token:(idle_inject/5)	ppid:2
+/proc/44/stat
+total string:
+44 (migration/5) S 2 0 0 0 -1 69238848 0 0 0 0 0 13 0 0 -100 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 5 99 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:44      pid:44	token:(migration/5)	ppid:2
+/proc/45/stat
+total string:
+45 (ksoftirqd/5) S 2 0 0 0 -1 69238848 0 0 0 0 2 1 0 0 20 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 5 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0
+ 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:45      pid:45	token:(ksoftirqd/5)	ppid:2
+/proc/47/stat
+total string:
+47 (kworker/5:0H-events_highpri) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 5 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:47      pid:47	token:(kworker/5:0H-events_highpri)	ppid:2
+/proc/48/stat
+total string:
+48 (cpuhp/6) S 2 0 0 0 -1 69239104 0 0 0 0 0 0 0 0 20 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:48      pid:48	token:(cpuhp/6)	ppid:2
+/proc/49/stat
+total string:
+49 (idle_inject/6) S 2 0 0 0 -1 69238848 0 0 0 0 0 0 0 0 -51 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 6 50 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:49      pid:49	token:(idle_inject/6)	ppid:2
+/proc/50/stat
+total string:
+50 (migration/6) S 2 0 0 0 -1 69238848 0 0 0 0 0 13 0 0 -100 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 6 99 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:50      pid:50	token:(migration/6)	ppid:2
+/proc/51/stat
+total string:
+51 (ksoftirqd/6) S 2 0 0 0 -1 69238848 0 0 0 0 0 2 0 0 20 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0
+ 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:51      pid:51	token:(ksoftirqd/6)	ppid:2
+/proc/53/stat
+total string:
+53 (kworker/6:0H-events_highpri) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:53      pid:53	token:(kworker/6:0H-events_highpri)	ppid:2
+/proc/54/stat
+total string:
+54 (cpuhp/7) S 2 0 0 0 -1 69239104 0 0 0 0 0 0 0 0 20 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 7 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:54      pid:54	token:(cpuhp/7)	ppid:2
+/proc/55/stat
+total string:
+55 (idle_inject/7) S 2 0 0 0 -1 69238848 0 0 0 0 0 0 0 0 -51 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 7 50 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:55      pid:55	token:(idle_inject/7)	ppid:2
+/proc/56/stat
+total string:
+56 (migration/7) S 2 0 0 0 -1 69238848 0 0 0 0 0 13 0 0 -100 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 7 99 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:56      pid:56	token:(migration/7)	ppid:2
+/proc/57/stat
+total string:
+57 (ksoftirqd/7) S 2 0 0 0 -1 69238848 0 0 0 0 1 1 0 0 20 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 7 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0
+ 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:57      pid:57	token:(ksoftirqd/7)	ppid:2
+/proc/59/stat
+total string:
+59 (kworker/7:0H-kblockd) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 7 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:59      pid:59	token:(kworker/7:0H-kblockd)	ppid:2
+/proc/60/stat
+total string:
+60 (cpuhp/8) S 2 0 0 0 -1 69239104 0 0 0 0 0 0 0 0 20 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 8 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+ 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:60      pid:60	token:(cpuhp/8)	ppid:2
+/proc/61/stat
+total string:
+61 (idle_inject/8) S 2 0 0 0 -1 69238848 0 0 0 0 0 0 0 0 -51 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 8 50 1 0 0 0 0 0 0 0 0 0 0 0
+0 0 0
+ 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:61      pid:61	token:(idle_inject/8)	ppid:2
+/proc/62/stat
+total string:
+62 (migration/8) S 2 0 0 0 -1 69238848 0 0 0 0 0 13 0 0 -100 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 8 99 1 0 0 0 0 0 0 0 0 0 0 0
+0 0 0
+ 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:62      pid:62	token:(migration/8)	ppid:2
+/proc/63/stat
+total string:
+63 (ksoftirqd/8) S 2 0 0 0 -1 69238848 0 0 0 0 2 0 0 0 20 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 8 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0
+0 0 0
+ 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:63      pid:63	token:(ksoftirqd/8)	ppid:2
+/proc/65/stat
+total string:
+65 (kworker/8:0H-events_highpri) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 8 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:65      pid:65	token:(kworker/8:0H-events_highpri)	ppid:2
+/proc/66/stat
+total string:
+66 (cpuhp/9) S 2 0 0 0 -1 69239104 0 0 0 0 0 0 0 0 20 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 9 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:66      pid:66	token:(cpuhp/9)	ppid:2
+/proc/67/stat
+total string:
+67 (idle_inject/9) S 2 0 0 0 -1 69238848 0 0 0 0 0 0 0 0 -51 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 9 50 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:67      pid:67	token:(idle_inject/9)	ppid:2
+/proc/68/stat
+total string:
+68 (migration/9) S 2 0 0 0 -1 69238848 0 0 0 0 0 14 0 0 -100 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 9 99 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:68      pid:68	token:(migration/9)	ppid:2
+/proc/69/stat
+total string:
+69 (ksoftirqd/9) S 2 0 0 0 -1 69238848 0 0 0 0 0 3 0 0 20 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 9 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0
+ 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:69      pid:69	token:(ksoftirqd/9)	ppid:2
+/proc/71/stat
+total string:
+71 (kworker/9:0H-kblockd) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 9 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:71      pid:71	token:(kworker/9:0H-kblockd)	ppid:2
+/proc/72/stat
+total string:
+72 (cpuhp/10) S 2 0 0 0 -1 69239104 0 0 0 0 0 0 0 0 20 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 10 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0
+ 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:72      pid:72	token:(cpuhp/10)	ppid:2
+/proc/73/stat
+total string:
+73 (idle_inject/10) S 2 0 0 0 -1 69238848 0 0 0 0 0 0 0 0 -51 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 10 50 1 0 0 0 0 0 0 0 0 0 0 0
+0 0
+ 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:73      pid:73	token:(idle_inject/10)	ppid:2
+/proc/74/stat
+total string:
+74 (migration/10) S 2 0 0 0 -1 69238848 0 0 0 0 0 14 0 0 -100 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 10 99 1 0 0 0 0 0 0 0 0 0 0 0
+0 0
+ 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:74      pid:74	token:(migration/10)	ppid:2
+/proc/75/stat
+total string:
+75 (ksoftirqd/10) S 2 0 0 0 -1 69238848 0 0 0 0 0 1 0 0 20 0 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 10 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0
+0 0
+ 0 0 0
+0 0 0 0 0 0 0 0 0
+
+proc_stat:75      pid:75	token:(ksoftirqd/10)	ppid:2
+/proc/77/stat
+total string:
+77 (kworker/10:0H-events_highpri) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 12 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 10 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:77      pid:77	token:(kworker/10:0H-events_highpri)	ppid:2
+/proc/78/stat
+total string:
+78 (cpuhp/11) S 2 0 0 0 -1 69239104 0 0 0 0 0 0 0 0 20 0 1 0 13 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 11 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:78      pid:78	token:(cpuhp/11)	ppid:2
+/proc/79/stat
+total string:
+79 (idle_inject/11) S 2 0 0 0 -1 69238848 0 0 0 0 0 0 0 0 -51 0 1 0 13 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 11 50 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:79      pid:79	token:(idle_inject/11)	ppid:2
+/proc/80/stat
+total string:
+80 (migration/11) S 2 0 0 0 -1 69238848 0 0 0 0 0 14 0 0 -100 0 1 0 13 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 11 99 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:80      pid:80	token:(migration/11)	ppid:2
+/proc/81/stat
+total string:
+81 (ksoftirqd/11) S 2 0 0 0 -1 69238848 0 0 0 0 1 1 0 0 20 0 1 0 13 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 11 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0
+ 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:81      pid:81	token:(ksoftirqd/11)	ppid:2
+/proc/83/stat
+total string:
+83 (kworker/11:0H-events_highpri) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 13 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 11 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:83      pid:83	token:(kworker/11:0H-events_highpri)	ppid:2
+/proc/84/stat
+total string:
+84 (kdevtmpfs) S 2 0 0 0 -1 2130240 0 0 0 0 0 0 0 0 20 0 1 0 13 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 11 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:84      pid:84	token:(kdevtmpfs)	ppid:2
+/proc/85/stat
+total string:
+85 (inet_frag_wq) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 13 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 2 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:85      pid:85	token:(inet_frag_wq)	ppid:2
+/proc/86/stat
+total string:
+86 (kauditd) S 2 0 0 0 -1 1075839040 0 0 0 0 0 0 0 0 20 0 1 0 13 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0
+ 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:86      pid:86	token:(kauditd)	ppid:2
+/proc/87/stat
+total string:
+87 (khungtaskd) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 20 0 1 0 14 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 4 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0
+ 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:87      pid:87	token:(khungtaskd)	ppid:2
+/proc/88/stat
+total string:
+88 (oom_reaper) S 2 0 0 0 -1 1075871808 0 0 0 0 0 0 0 0 20 0 1 0 14 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 5 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+ 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:88      pid:88	token:(oom_reaper)	ppid:2
+/proc/89/stat
+total string:
+89 (writeback) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 14 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+0
+
+ 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:89      pid:89	token:(writeback)	ppid:2
+/proc/90/stat
+total string:
+90 (kcompactd0) S 2 0 0 0 -1 1075839040 0 0 0 0 9 0 0 0 20 0 1 0 14 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 5 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+ 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:90      pid:90	token:(kcompactd0)	ppid:2
+/proc/91/stat
+total string:
+91 (ksmd) S 2 0 0 0 -1 1075839040 0 0 0 0 0 0 0 0 25 5 1 0 14 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 3 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0
+
+ 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:91      pid:91	token:(ksmd)	ppid:2
+/proc/92/stat
+total string:
+92 (khugepaged) S 2 0 0 0 -1 1075839040 0 0 0 0 2 0 0 0 39 19 1 0 14 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 2 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:92      pid:92	token:(khugepaged)	ppid:2
+/proc/139/stat
+total string:
+139 (kintegrityd) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 14 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 5 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:139      pid:139	token:(kintegrityd)	ppid:2
+/proc/140/stat
+total string:
+140 (kblockd) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 14 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 5 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0
+ 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:140      pid:140	token:(kblockd)	ppid:2
+/proc/141/stat
+total string:
+141 (blkcg_punt_bio) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 14 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 2 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:141      pid:141	token:(blkcg_punt_bio)	ppid:2
+/proc/142/stat
+total string:
+142 (tpm_dev_wq) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 32 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 3 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:142      pid:142	token:(tpm_dev_wq)	ppid:2
+/proc/143/stat
+total string:
+143 (ata_sff) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 32 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 4 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0
+0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:143      pid:143	token:(ata_sff)	ppid:2
+/proc/144/stat
+total string:
+144 (md) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 32 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 2 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0
+ 0
+0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:144      pid:144	token:(md)	ppid:2
+/proc/145/stat
+total string:
+145 (edac-poller) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 32 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 7 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:145      pid:145	token:(edac-poller)	ppid:2
+/proc/146/stat
+total string:
+146 (devfreq_wq) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 32 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 5 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+ 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:146      pid:146	token:(devfreq_wq)	ppid:2
+/proc/147/stat
+total string:
+147 (watchdogd) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 -51 0 1 0 41 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 3 50 1 0 0 0 0 0 0 0 0 0 0 0
+
+
+ 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:147      pid:147	token:(watchdogd)	ppid:2
+/proc/149/stat
+total string:
+149 (kworker/0:1H-kblockd) I 2 0 0 0 -1 69238880 0 0 0 0 0 2 0 0 0 -20 1 0 43 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:149      pid:149	token:(kworker/0:1H-kblockd)	ppid:2
+/proc/152/stat
+total string:
+152 (kswapd0) S 2 0 0 0 -1 10618944 0 0 0 0 0 0 0 0 20 0 1 0 44 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 11 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:152      pid:152	token:(kswapd0)	ppid:2
+/proc/153/stat
+total string:
+153 (ecryptfs-kthrea) S 2 0 0 0 -1 1075839040 0 0 0 0 0 0 0 0 20 0 1 0 44 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 9 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0
+0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:153      pid:153	token:(ecryptfs-kthrea)	ppid:2
+/proc/155/stat
+total string:
+155 (kworker/2:1-events) I 2 0 0 0 -1 69238880 0 0 0 0 0 15 0 0 20 0 1 0 45 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 2 0 0 0 0 0 0 0 0 0 0 0 0 0
+0
+0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:155      pid:155	token:(kworker/2:1-events)	ppid:2
+/proc/156/stat
+total string:
+156 (kthrotld) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 45 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 11 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0
+0
+0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:156      pid:156	token:(kthrotld)	ppid:2
+/proc/159/stat
+total string:
+159 (irq/124-aerdrv) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 -51 0 1 0 45 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 4 50 1 0 0 0 0 0 0 0 0 0 0 0
+0 0
+0
+0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:159      pid:159	token:(irq/124-aerdrv)	ppid:2
+/proc/160/stat
+total string:
+160 (irq/124-pcie-dp) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 -51 0 1 0 45 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 4 50 1 0 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:160      pid:160	token:(irq/124-pcie-dp)	ppid:2
+/proc/161/stat
+total string:
+161 (irq/125-aerdrv) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 -51 0 1 0 45 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 5 50 1 0 0 0 0 0 0 0 0 0 0 0
+
+ 0
+0
+0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:161      pid:161	token:(irq/125-aerdrv)	ppid:2
+/proc/162/stat
+total string:
+162 (irq/125-pcie-dp) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 -51 0 1 0 45 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 5 50 1 0 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:162      pid:162	token:(irq/125-pcie-dp)	ppid:2
+/proc/163/stat
+total string:
+163 (irq/126-aerdrv) S 2 0 0 0 -1 2129984 0 0 0 0 0 24 0 0 -51 0 1 0 45 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 1 50 1 0 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:163      pid:163	token:(irq/126-aerdrv)	ppid:2
+/proc/164/stat
+total string:
+164 (irq/126-pcie-dp) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 -51 0 1 0 45 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 6 50 1 0 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:164      pid:164	token:(irq/126-pcie-dp)	ppid:2
+/proc/165/stat
+total string:
+165 (acpi_thermal_pm) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 45 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 10 0 0 0 0 0 0 0 0 0 0 0 0 0
+0
+0
+0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:165      pid:165	token:(acpi_thermal_pm)	ppid:2
+/proc/167/stat
+total string:
+167 (vfio-irqfd-clea) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 47 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 10 0 0 0 0 0 0 0 0 0 0 0 0 0
+0
+0
+0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:167      pid:167	token:(vfio-irqfd-clea)	ppid:2
+/proc/169/stat
+total string:
+169 (mld) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 51 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0
+0
+0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:169      pid:169	token:(mld)	ppid:2
+/proc/170/stat
+total string:
+170 (kworker/5:1H-kblockd) I 2 0 0 0 -1 69238880 0 0 0 0 0 7 0 0 0 -20 1 0 51 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 5 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:170      pid:170	token:(kworker/5:1H-kblockd)	ppid:2
+/proc/171/stat
+total string:
+171 (ipv6_addrconf) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 51 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 10 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0
+0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:171      pid:171	token:(ipv6_addrconf)	ppid:2
+/proc/174/stat
+total string:
+174 (kworker/3:2-events) I 2 0 0 0 -1 69238880 0 0 0 0 4 5 0 0 20 0 1 0 58 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 3 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0
+0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:174      pid:174	token:(kworker/3:2-events)	ppid:2
+/proc/180/stat
+total string:
+180 (kworker/6:1-events) I 2 0 0 0 -1 69238880 0 0 0 0 3 7 0 0 20 0 1 0 58 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0
+0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:180      pid:180	token:(kworker/6:1-events)	ppid:2
+/proc/183/stat
+total string:
+183 (kstrp) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 58 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 5 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0
+ 0
+0 0 0 0
+0 0 0 0 0 0 0 0
+
+proc_stat:183      pid:183	token:(kstrp)	ppid:2
+/proc/185/stat
+total string:
+185 (kworker/8:1-cgroup_destroy) I 2 0 0 0 -1 69238880 0 0 0 0 0 2 0 0 20 0 1 0 58 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 8 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0
+0 0 0 0 0 0 0 0
+
+proc_stat:185      pid:185	token:(kworker/8:1-cgroup_destroy)	ppid:2
+/proc/188/stat
+total string:
+188 (zswap-shrink) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 59 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+ 0
+0 0 0 0 0 0 0 0
+
+proc_stat:188      pid:188	token:(zswap-shrink)	ppid:2
+/proc/190/stat
+total string:
+190 (kworker/11:1-events) I 2 0 0 0 -1 69238880 0 0 0 0 3 14 0 0 20 0 1 0 59 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 11 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0
+ 0
+0 0 0 0 0 0 0 0
+
+proc_stat:190      pid:190	token:(kworker/11:1-events)	ppid:2
+/proc/191/stat
+total string:
+191 (kworker/u25:0-rb_allocator) I 2 0 0 0 -1 69238880 0 0 0 0 0 6 0 0 0 -20 1 0 59 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 4 0 0 0 0 0 0 0 0 0 0 0 0 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:191      pid:191	token:(kworker/u25:0-rb_allocator)	ppid:2
+/proc/198/stat
+total string:
+198 (charger_manager) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 59 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:198      pid:198	token:(charger_manager)	ppid:2
+/proc/220/stat
+total string:
+220 (kworker/3:1H-kblockd) I 2 0 0 0 -1 69238880 0 0 0 0 0 11 0 0 0 -20 1 0 74 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 3 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:220      pid:220	token:(kworker/3:1H-kblockd)	ppid:2
+/proc/249/stat
+total string:
+249 (kworker/6:1H-kblockd) I 2 0 0 0 -1 69238880 0 0 0 0 0 4 0 0 0 -20 1 0 81 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+ 0 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:249      pid:249	token:(kworker/6:1H-kblockd)	ppid:2
+/proc/267/stat
+total string:
+267 (nvme-wq) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 82 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 4 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+
+ 0 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:267      pid:267	token:(nvme-wq)	ppid:2
+/proc/268/stat
+total string:
+268 (nvme-reset-wq) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 82 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 5 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0
+
+ 0 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:268      pid:268	token:(nvme-reset-wq)	ppid:2
+/proc/269/stat
+total string:
+269 (nvme-delete-wq) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 82 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0
+
+ 0 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:269      pid:269	token:(nvme-delete-wq)	ppid:2
+/proc/279/stat
+total string:
+279 (kworker/10:1H-kblockd) I 2 0 0 0 -1 69238880 0 0 0 0 0 4 0 0 0 -20 1 0 85 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 10 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:279      pid:279	token:(kworker/10:1H-kblockd)	ppid:2
+/proc/281/stat
+total string:
+281 (scsi_eh_0) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 20 0 1 0 85 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 7 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0
+0 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:281      pid:281	token:(scsi_eh_0)	ppid:2
+/proc/282/stat
+total string:
+282 (scsi_tmf_0) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 85 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 8 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0
+0 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:282      pid:282	token:(scsi_tmf_0)	ppid:2
+/proc/283/stat
+total string:
+283 (scsi_eh_1) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 20 0 1 0 85 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0
+0 0 0 0 0 0
+0 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:283      pid:283	token:(scsi_eh_1)	ppid:2
+/proc/284/stat
+total string:
+284 (scsi_tmf_1) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 85 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 8 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0
+0 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:284      pid:284	token:(scsi_tmf_1)	ppid:2
+/proc/285/stat
+total string:
+285 (scsi_eh_2) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 20 0 1 0 85 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 2 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0
+0 0 0 0 0 0
+0 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:285      pid:285	token:(scsi_eh_2)	ppid:2
+/proc/286/stat
+total string:
+286 (scsi_tmf_2) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 85 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 8 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0
+0 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:286      pid:286	token:(scsi_tmf_2)	ppid:2
+/proc/287/stat
+total string:
+287 (scsi_eh_3) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 20 0 1 0 85 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0
+0 0 0 0 0 0
+0 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:287      pid:287	token:(scsi_eh_3)	ppid:2
+/proc/288/stat
+total string:
+288 (scsi_tmf_3) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 85 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 8 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0
+0 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:288      pid:288	token:(scsi_tmf_3)	ppid:2
+/proc/289/stat
+total string:
+289 (scsi_eh_4) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 20 0 1 0 85 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 8 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0
+0 0 0 0 0 0
+0 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:289      pid:289	token:(scsi_eh_4)	ppid:2
+/proc/290/stat
+total string:
+290 (scsi_tmf_4) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 85 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 8 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0
+0 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:290      pid:290	token:(scsi_tmf_4)	ppid:2
+/proc/291/stat
+total string:
+291 (scsi_eh_5) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 20 0 1 0 85 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 9 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0
+0 0 0 0 0 0
+0 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:291      pid:291	token:(scsi_eh_5)	ppid:2
+/proc/292/stat
+total string:
+292 (scsi_tmf_5) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 85 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 8 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0
+0 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:292      pid:292	token:(scsi_tmf_5)	ppid:2
+/proc/299/stat
+total string:
+299 (kworker/8:1H-kblockd) I 2 0 0 0 -1 69238880 0 0 0 0 0 2 0 0 0 -20 1 0 92 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 8 0 0 0 0 0 0 0 0 0 0 0 0 0
+0
+0 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:299      pid:299	token:(kworker/8:1H-kblockd)	ppid:2
+/proc/301/stat
+total string:
+301 (kworker/9:1H-kblockd) I 2 0 0 0 -1 69238880 0 0 0 0 0 6 0 0 0 -20 1 0 119 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 9 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+0 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:301      pid:301	token:(kworker/9:1H-kblockd)	ppid:2
+/proc/306/stat
+total string:
+306 (kworker/11:1H-kblockd) I 2 0 0 0 -1 69238880 0 0 0 0 1 1 0 0 0 -20 1 0 122 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 11 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:306      pid:306	token:(kworker/11:1H-kblockd)	ppid:2
+/proc/308/stat
+total string:
+308 (kworker/1:1H-kblockd) I 2 0 0 0 -1 69238880 0 0 0 0 0 3 0 0 0 -20 1 0 123 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+0
+ 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:308      pid:308	token:(kworker/1:1H-kblockd)	ppid:2
+/proc/310/stat
+total string:
+310 (kworker/2:1H-kblockd) I 2 0 0 0 -1 69238880 0 0 0 0 0 25 0 0 0 -20 1 0 149 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 2 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+ 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:310      pid:310	token:(kworker/2:1H-kblockd)	ppid:2
+/proc/318/stat
+total string:
+318 (kworker/4:1H-kblockd) I 2 0 0 0 -1 69238880 0 0 0 0 0 12 0 0 0 -20 1 0 335 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 4 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+ 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:318      pid:318	token:(kworker/4:1H-kblockd)	ppid:2
+/proc/346/stat
+total string:
+346 (jbd2/sda1-8) S 2 0 0 0 -1 2359360 0 0 0 0 1 15 0 0 20 0 1 0 386 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 3 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0
+
+ 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:346      pid:346	token:(jbd2/sda1-8)	ppid:2
+/proc/347/stat
+total string:
+347 (ext4-rsv-conver) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 387 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 9 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0
+
+ 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:347      pid:347	token:(ext4-rsv-conver)	ppid:2
+/proc/360/stat
+total string:
+360 (jbd2/sda3-8) S 2 0 0 0 -1 2359360 0 0 0 0 0 0 0 0 20 0 1 0 404 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0
+0 0 0
+
+ 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:360      pid:360	token:(jbd2/sda3-8)	ppid:2
+/proc/361/stat
+total string:
+361 (ext4-rsv-conver) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 404 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 5 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0
+
+ 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:361      pid:361	token:(ext4-rsv-conver)	ppid:2
+/proc/394/stat
+total string:
+394 (kworker/7:1H-kblockd) I 2 0 0 0 -1 69238880 0 0 0 0 0 4 0 0 0 -20 1 0 529 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 7 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+ 0
+0
+0 0 0 0 0 0 0 0
+
+proc_stat:394      pid:394	token:(kworker/7:1H-kblockd)	ppid:2
+/proc/402/stat
+total string:
+402 (systemd-journal) S 1 402 402 0 -1 4194560 1827 0 34051 0 209 236 0 0 19 -1 1 0 617 120295424 15970 18446744073709551615 1 1 0 0 0 0 18946 4096 64 0 0 0 17 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0
+
+proc_stat:402      pid:402	token:(systemd-journal)	ppid:1
+/proc/428/stat
+total string:
+428 (ipmi-msghandler) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 626 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 11 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0
+ 0
+
+proc_stat:428      pid:428	token:(ipmi-msghandler)	ppid:2
+/proc/464/stat
+total string:
+464 (systemd-udevd) S 1 464 464 0 -1 4194560 3835 212107 11 1710 134 9 285 402 20 0 1 0 635 26419200 2118 18446744073709551615 1 1 0 0 0 0 81923 4096 0 0 0 0 17 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+0
+
+proc_stat:464      pid:464	token:(systemd-udevd)	ppid:1
+/proc/574/stat
+total string:
+574 (irq/154-mei_me) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 -51 0 1 0 711 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 7 50 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0
+0
+
+proc_stat:574      pid:574	token:(irq/154-mei_me)	ppid:2
+/proc/591/stat
+total string:
+591 (cfg80211) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 741 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 4 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0
+0
+
+proc_stat:591      pid:591	token:(cfg80211)	ppid:2
+/proc/599/stat
+total string:
+599 (kworker/0:2-events) I 2 0 0 0 -1 69238880 0 0 0 0 1 17 0 0 20 0 1 0 749 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0
+0
+
+proc_stat:599      pid:599	token:(kworker/0:2-events)	ppid:2
+/proc/672/stat
+total string:
+672 (irq/155-iwlwifi) S 2 0 0 0 -1 2129984 0 0 0 0 0 42 0 0 -51 0 1 0 762 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 3 50 1 0 0 0 0 0 0 0 0 0 0 0
+0
+ 0 0 0 0 0 0 0 0 0 0 0
+0
+
+proc_stat:672      pid:672	token:(irq/155-iwlwifi)	ppid:2
+/proc/673/stat
+total string:
+673 (irq/156-iwlwifi) S 2 0 0 0 -1 2129984 0 0 0 0 0 26 0 0 -51 0 1 0 762 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 10 50 1 0 0 0 0 0 0 0 0 0 0 0
+
+ 0 0 0 0 0 0 0 0 0 0 0
+0
+
+proc_stat:673      pid:673	token:(irq/156-iwlwifi)	ppid:2
+/proc/674/stat
+total string:
+674 (irq/157-iwlwifi) S 2 0 0 0 -1 2129984 0 0 0 0 0 8 0 0 -51 0 1 0 762 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 1 50 1 0 0 0 0 0 0 0 0 0 0 0
+0
+
+ 0 0 0 0 0 0 0 0 0 0 0
+0
+
+proc_stat:674      pid:674	token:(irq/157-iwlwifi)	ppid:2
+/proc/675/stat
+total string:
+675 (irq/158-iwlwifi) S 2 0 0 0 -1 2129984 0 0 0 0 0 26 0 0 -51 0 1 0 762 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 7 50 1 0 0 0 0 0 0 0 0 0 0 0
+
+
+ 0 0 0 0 0 0 0 0 0 0 0
+0
+
+proc_stat:675      pid:675	token:(irq/158-iwlwifi)	ppid:2
+/proc/676/stat
+total string:
+676 (irq/159-iwlwifi) S 2 0 0 0 -1 2129984 0 0 0 0 0 18 0 0 -51 0 1 0 762 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 6 50 1 0 0 0 0 0 0 0 0 0 0 0
+
+
+ 0 0 0 0 0 0 0 0 0 0 0
+0
+
+proc_stat:676      pid:676	token:(irq/159-iwlwifi)	ppid:2
+/proc/677/stat
+total string:
+677 (irq/160-iwlwifi) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 -51 0 1 0 762 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 1 50 1 0 0 0 0 0 0 0 0 0 0 0
+
+
+
+ 0 0 0 0 0 0 0 0 0 0 0
+0
+
+proc_stat:677      pid:677	token:(irq/160-iwlwifi)	ppid:2
+/proc/682/stat
+total string:
+682 (cryptd) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 764 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 4 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0
+
+
+
+ 0 0 0 0 0 0 0 0 0 0 0
+0
+
+proc_stat:682      pid:682	token:(cryptd)	ppid:2
+/proc/751/stat
+total string:
+751 (kmemstick) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 781 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0
+
+
+
+ 0 0 0 0 0 0 0 0 0 0 0
+0
+
+proc_stat:751      pid:751	token:(kmemstick)	ppid:2
+/proc/752/stat
+total string:
+752 (kworker/u25:1-rb_allocator) I 2 0 0 0 -1 69238880 0 0 0 0 0 15 0 0 0 -20 1 0 782 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 10 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0
+
+proc_stat:752      pid:752	token:(kworker/u25:1-rb_allocator)	ppid:2
+/proc/769/stat
+total string:
+769 (card0-crtc0) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 -51 0 1 0 784 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 9 50 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0
+
+proc_stat:769      pid:769	token:(card0-crtc0)	ppid:2
+/proc/770/stat
+total string:
+770 (card0-crtc1) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 -51 0 1 0 784 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 9 50 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0
+
+proc_stat:770      pid:770	token:(card0-crtc1)	ppid:2
+/proc/771/stat
+total string:
+771 (card0-crtc2) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 -51 0 1 0 784 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 9 50 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0
+
+proc_stat:771      pid:771	token:(card0-crtc2)	ppid:2
+/proc/799/stat
+total string:
+799 (nv_queue) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 20 0 1 0 827 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 4 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0
+ 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0
+
+proc_stat:799      pid:799	token:(nv_queue)	ppid:2
+/proc/800/stat
+total string:
+800 (nv_queue) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 20 0 1 0 827 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 3 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0
+ 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0
+
+proc_stat:800      pid:800	token:(nv_queue)	ppid:2
+/proc/818/stat
+total string:
+818 (nvidia-modeset/) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 20 0 1 0 838 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0
+
+proc_stat:818      pid:818	token:(nvidia-modeset/)	ppid:2
+/proc/819/stat
+total string:
+819 (nvidia-modeset/) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 20 0 1 0 838 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 9 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0
+
+proc_stat:819      pid:819	token:(nvidia-modeset/)	ppid:2
+/proc/1044/stat
+total string:
+1044 (UVM global queu) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 20 0 1 0 970 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 10 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0
+
+proc_stat:1044      pid:1044	token:(UVM	ppid:0
+/proc/1045/stat
+total string:
+1045 (UVM deferred re) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 20 0 1 0 970 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 5 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+ 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0
+
+proc_stat:1045      pid:1045	token:(UVM	ppid:0
+/proc/1046/stat
+total string:
+1046 (UVM Tools Event) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 20 0 1 0 970 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+ 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0
+
+proc_stat:1046      pid:1046	token:(UVM	ppid:0
+/proc/1119/stat
+total string:
+1119 (jbd2/sda4-8) S 2 0 0 0 -1 2359360 0 0 0 0 0 24 0 0 20 0 1 0 999 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 3 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0
+
+ 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0
+
+proc_stat:1119      pid:1119	token:(jbd2/sda4-8)	ppid:2
+/proc/1120/stat
+total string:
+1120 (ext4-rsv-conver) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 999 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0
+ 0 0 0 0 0 0
+0
+
+proc_stat:1120      pid:1120	token:(ext4-rsv-conver)	ppid:2
+/proc/1147/stat
+total string:
+1147 (systemd-resolve) S 1 1147 1147 0 -1 4194560 1754 0 43 0 37 20 0 0 20 0 1 0 1023 25403392 3348 18446744073709551615 1 1 0 0 0 0 18946 4096 0 0 0 0 17 9 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0
+0
+
+proc_stat:1147      pid:1147	token:(systemd-resolve)	ppid:1
+/proc/1148/stat
+total string:
+1148 (systemd-timesyn) S 1 1148 1148 0 -1 4194560 826 0 6 0 5 5 0 0 20 0 2 0 1023 93085696 1476 18446744073709551615 1 1 0 0 0 0 16386 4096 0 0 0 0 17 5 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0
+0 0 0
+0
+
+proc_stat:1148      pid:1148	token:(systemd-timesyn)	ppid:1
+/proc/1265/stat
+total string:
+1265 (accounts-daemon) S 1 1265 1265 0 -1 4194560 983 847 21 5 38 36 2 1 20 0 3 0 1053 248487936 2169 18446744073709551615 1 1 0 0 0 0 0 4096 16386 0 0 0 17 7 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0
+0
+
+proc_stat:1265      pid:1265	token:(accounts-daemon)	ppid:1
+/proc/1266/stat
+total string:
+1266 (acpid) S 1 1266 1266 0 -1 4194560 189 0 2 0 7 21 0 0 20 0 1 0 1054 2609152 192 18446744073709551615 1 1 0 0 0 0 0 4096 16391 0 0 0 17 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0
+0 0
+0
+
+proc_stat:1266      pid:1266	token:(acpid)	ppid:1
+/proc/1269/stat
+total string:
+1269 (avahi-daemon) S 1 1269 1269 0 -1 4194560 376 0 11 0 5 7 0 0 20 0 1 0 1055 8744960 870 18446744073709551615 1 1 0 0 0 0 0 4096 16899 0 0 0 17 7 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0
+0 0
+0
+
+proc_stat:1269      pid:1269	token:(avahi-daemon)	ppid:1
+/proc/1270/stat
+total string:
+1270 (bluetoothd) S 1 1270 1270 0 -1 4194560 474 0 16 0 2 1 0 0 20 0 1 0 1055 8626176 1094 18446744073709551615 1 1 0 0 0 0 83970 4096 0 0 0 0 17 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+0 0 0 0 0
+0 0
+0
+
+proc_stat:1270      pid:1270	token:(bluetoothd)	ppid:1
+/proc/1271/stat
+total string:
+1271 (cron) S 1 1271 1271 0 -1 1077936384 315 2546 2 0 0 1 3 0 20 0 1 0 1060 12795904 752 18446744073709551615 1 1 0 0 0 0 0 0 65537 0 0 0 17 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0
+
+0 0 0 0 0
+0 0
+0
+
+proc_stat:1271      pid:1271	token:(cron)	ppid:1
+/proc/1272/stat
+total string:
+1272 (cupsd) S 1 1272 1272 0 -1 4194560 806 0 30 0 2 1 0 0 20 0 1 0 1060 32542720 2237 18446744073709551615 1 1 0 0 0 0 0 4096 81921 0 0 0 17 2 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0
+
+0 0 0 0 0
+0 0
+0
+
+proc_stat:1272      pid:1272	token:(cupsd)	ppid:1
+/proc/1273/stat
+total string:
+1273 (dbus-daemon) S 1 1273 1273 0 -1 4194560 793 0 10 0 122 41 0 0 20 0 1 0 1060 9211904 1491 18446744073709551615 1 1 0 0 0 0 0 4096 16385 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0
+0 0
+0
+
+proc_stat:1273      pid:1273	token:(dbus-daemon)	ppid:1
+/proc/1274/stat
+total string:
+1274 (NetworkManager) S 1 1274 1274 0 -1 4194560 1656 0 119 0 351 317 0 0 20 0 3 0 1061 348532736 5251 18446744073709551615 1 1 0 0 0 0 0 4096 18947 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+proc_stat:1274      pid:1274	token:(NetworkManager)	ppid:1
+/proc/1294/stat
+total string:
+1294 (irqbalance) S 1 1294 1294 0 -1 4194560 426 0 4 0 10 25 0 0 20 0 2 0 1077 83943424 895 18446744073709551615 1 1 0 0 0 0 0 4096 18947 0 0 0 17 5 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0
+ 0
+0
+
+proc_stat:1294      pid:1294	token:(irqbalance)	ppid:1
+/proc/1296/stat
+total string:
+1296 (networkd-dispat) S 1 1296 1296 0 -1 4194560 3488 427 90 2 16 4 0 0 20 0 1 0 1083 44056576 5163 18446744073709551615 1 1 0 0 0 0 0 16781312 2 0 0 0 17 5 0 0 0 0 0 0 0 0 0 0 0 0 0
+0
+ 0
+0
+
+proc_stat:1296      pid:1296	token:(networkd-dispat)	ppid:1
+/proc/1301/stat
+total string:
+1301 (nvidia-persiste) S 1 1301 1301 0 -1 4194624 71 0 3 0 0 64 0 0 20 0 1 0 1084 5251072 447 18446744073709551615 1 1 0 0 0 0 3735552 4096 16386 0 0 0 17 8 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+0
+ 0
+0
+
+proc_stat:1301      pid:1301	token:(nvidia-persiste)	ppid:1
+/proc/1302/stat
+total string:
+1302 (polkitd) S 1 1302 1302 0 -1 4194560 1435 0 8 0 123 39 0 0 20 0 3 0 1085 240680960 2495 18446744073709551615 1 1 0 0 0 0 2 4096 0 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0
+
+0
+ 0
+0
+
+proc_stat:1302      pid:1302	token:(polkitd)	ppid:1
+/proc/1304/stat
+total string:
+1304 (rsyslogd) S 1 1304 1304 0 -1 4194560 852 0 17 0 33 33 0 0 20 0 4 0 1085 229736448 1379 18446744073709551615 1 1 0 0 0 0 0 16781830 3227649 0 0 0 17 11 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+0
+ 0
+0
+
+proc_stat:1304      pid:1304	token:(rsyslogd)	ppid:1
+/proc/1308/stat
+total string:
+1308 (snapd) S 1 1308 1308 0 -1 1077936384 11816 33783 505 96 328 175 44 65 20 0 25 0 1087 1954693120 11484 18446744073709551615 1 1 0 0 0 0 1006254592 0 2143420159 0 0 0 17 9 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+proc_stat:1308      pid:1308	token:(snapd)	ppid:1
+/proc/1309/stat
+total string:
+1309 (irq/168-nvidia) S 2 0 0 0 -1 2129984 0 0 0 0 0 1601 0 0 -51 0 1 0 1087 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 0 50 1 0 0 0 0 0 0 0 0 0 0 0
+0 0 17 9 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+proc_stat:1309      pid:1309	token:(irq/168-nvidia)	ppid:2
+/proc/1310/stat
+total string:
+1310 (nvidia) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 20 0 1 0 1087 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+0 0 17 9 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+proc_stat:1310      pid:1310	token:(nvidia)	ppid:2
+/proc/1311/stat
+total string:
+1311 (nv_queue) S 2 0 0 0 -1 2129984 0 0 0 0 0 50 0 0 20 0 1 0 1087 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0
+0 0 17 9 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+proc_stat:1311      pid:1311	token:(nv_queue)	ppid:2
+/proc/1315/stat
+total string:
+1315 (switcheroo-cont) S 1 1315 1315 0 -1 4194560 524 0 7 0 1 0 0 0 20 0 3 0 1088 244523008 1470 18446744073709551615 1 1 0 0 0 0 0 4096 0 0 0 0 17 9 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0
+
+proc_stat:1315      pid:1315	token:(switcheroo-cont)	ppid:1
+/proc/1324/stat
+total string:
+1324 (systemd-logind) S 1 1324 1324 0 -1 4194560 2866 0 5 0 16 12 0 0 20 0 1 0 1088 17870848 2084 18446744073709551615 1 1 0 0 0 0 81923 4096 0 0 0 0 17 7 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0
+
+proc_stat:1324      pid:1324	token:(systemd-logind)	ppid:1
+/proc/1327/stat
+total string:
+1327 (thermald) S 1 1327 1327 0 -1 4194560 534 0 57 0 17 12 0 0 20 0 2 0 1089 132673536 2327 18446744073709551615 1 1 0 0 0 0 0 4096 16386 0 0 0 17 4 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0
+ 0 0 0 0 0 0 0 0 0 0
+
+proc_stat:1327      pid:1327	token:(thermald)	ppid:1
+/proc/1347/stat
+total string:
+1347 (udisksd) S 1 1347 1347 0 -1 4194560 5759 4898 53 3 42 12 2 4 20 0 5 0 1090 403779584 3535 18446744073709551615 1 1 0 0 0 0 0 4096 2 0 0 0 17 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+ 0 0
+ 0 0 0 0 0 0 0 0 0 0
+
+proc_stat:1347      pid:1347	token:(udisksd)	ppid:1
+/proc/1354/stat
+total string:
+1354 (wpa_supplicant) S 1 1354 1354 0 -1 4194560 527 0 49 0 2 3 0 0 20 0 1 0 1091 14389248 2225 18446744073709551615 1 1 0 0 0 0 0 4096 268451843 0 0 0 17 3 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0
+
+proc_stat:1354      pid:1354	token:(wpa_supplicant)	ppid:1
+/proc/1374/stat
+total string:
+1374 (avahi-daemon) S 1269 1269 1269 0 -1 1077936192 33 0 0 0 0 0 0 0 20 0 1 0 1091 8548352 81 18446744073709551615 1 1 0 0 0 0 0 0 0 0 0 0 17 9 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0
+
+proc_stat:1374      pid:1374	token:(avahi-daemon)	ppid:1269
+/proc/1415/stat
+total string:
+1415 (vmware-usbarbit) S 1 1415 1415 0 -1 4194368 141 4673 11 10 3 9 17 4 20 0 1 0 1156 14966784 813 18446744073709551615 1 1 0 0 0 0 0 3149824 466218735 0 0 0 17 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0
+
+proc_stat:1415      pid:1415	token:(vmware-usbarbit)	ppid:1
+/proc/1434/stat
+total string:
+1434 (cups-browsed) S 1 1434 1434 0 -1 4194560 893 0 12 0 4 3 0 0 20 0 3 0 1230 182673408 3081 18446744073709551615 1 1 0 0 0 0 0 4096 18946 0 0 0 17 5 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0
+ 0 0 0 0 0
+
+proc_stat:1434      pid:1434	token:(cups-browsed)	ppid:1
+/proc/1437/stat
+total string:
+1437 (clash) S 1 1437 1437 0 -1 1077936384 9167 0 151 0 197 240 0 0 20 0 18 0 1231 745496576 5070 18446744073709551615 1 1 0 0 0 0 0 0 2143420159 0 0 0 17 7 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+ 0 0 0 0 0
+
+proc_stat:1437      pid:1437	token:(clash)	ppid:1
+/proc/1440/stat
+total string:
+1440 (canonical-livep) S 1 1440 1440 0 -1 4194560 8340 1355 111 63 10 74 1 70 20 0 11 0 1231 615628800 2607 18446744073709551615 1 1 0 0 0 0 0 0 2143420159 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0
+
+proc_stat:1440      pid:1440	token:(canonical-livep)	ppid:1
+/proc/1442/stat
+total string:
+1442 (unattended-upgr) S 1 1442 1442 0 -1 4194560 2671 0 51 0 16 3 0 0 20 0 2 0 1231 124354560 5729 18446744073709551615 1 1 0 0 0 0 0 16781312 16387 0 0 0 17 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0
+ 0 0 0 0
+
+proc_stat:1442      pid:1442	token:(unattended-upgr)	ppid:1
+/proc/1443/stat
+total string:
+1443 (v2raya) S 1 1443 1443 0 -1 1077936384 5667 1999 236 161 75 26 1 4 20 0 17 0 1231 751128576 7738 18446744073709551615 1 1 0 0 0 0 1002060288 0 2143420159 0 0 0 17 2 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0
+
+proc_stat:1443      pid:1443	token:(v2raya)	ppid:1
+/proc/1456/stat
+total string:
+1456 (ModemManager) S 1 1456 1456 0 -1 4194560 1083 0 81 0 5 4 0 0 20 0 3 0 1245 247164928 2884 18446744073709551615 1 1 0 0 0 0 0 4096 16386 0 0 0 17 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0
+0 0 0
+
+proc_stat:1456      pid:1456	token:(ModemManager)	ppid:1
+/proc/1457/stat
+total string:
+1457 (containerd) S 1 1457 1457 0 -1 1077936384 6215 169 463 0 113 55 0 0 20 0 24 0 1246 1906270208 12072 18446744073709551615 1 1 0 0 0 0 0 0 2143420159 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0
+0 0 0
+
+proc_stat:1457      pid:1457	token:(containerd)	ppid:1
+/proc/1461/stat
+total string:
+1461 (lightdm) S 1 1461 1461 0 -1 4194560 2771 55595 4 148 5 4 67 65 20 0 3 0 1246 313221120 1957 18446744073709551615 1 1 0 0 0 0 0 4097 84482 0 0 0 17 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0
+ 0 0
+0 0 0
+
+proc_stat:1461      pid:1461	token:(lightdm)	ppid:1
+/proc/1575/stat
+total string:
+1575 (Xorg) S 1461 1575 1575 1031 1575 4194560 46237 14170 1086 12 3414 1832 28 9 20 0 4 0 1312 26336645120 37969 18446744073709551615 1 1 0 0 0 0 0 4096 1098933999 0 0 0 17 3 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+proc_stat:1575      pid:1575	token:(Xorg)	ppid:1461
+/proc/1605/stat
+total string:
+1605 (agetty) S 1 1605 1605 1025 1605 4194560 208 0 3 0 0 0 0 0 20 0 1 0 1321 11788288 438 18446744073709551615 1 1 0 0 0 0 0 6 0 0 0 0 17 9 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 17 3 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+proc_stat:1605      pid:1605	token:(agetty)	ppid:1
+/proc/1650/stat
+total string:
+1650 (iprt-VBoxWQueue) I 2 0 0 0 -1 69238880 0 0 0 0 0 0 0 0 0 -20 1 0 1351 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 9 0 0 0 0 0 0 0 0 0 0 0 0 0
+0
+0 0 17 3 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+proc_stat:1650      pid:1650	token:(iprt-VBoxWQueue)	ppid:2
+/proc/1651/stat
+total string:
+1651 (iprt-VBoxTscThr) S 2 0 0 0 -1 2129984 0 0 0 0 0 0 0 0 20 0 1 0 1353 0 0 18446744073709551615 0 0 0 0 0 0 0 2147483647 0 0 0 0 17 2 0 0 0 0 0 0 0 0 0 0 0 0 0
+0
+0
+0 0 17 3 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+proc_stat:1651      pid:1651	token:(iprt-VBoxTscThr)	ppid:2
+/proc/1842/stat
+total string:
+1842 (dockerd) S 1 1842 1842 0 -1 1077936384 9411 11362 682 109 117 19 10 3 20 0 24 0 1753 2551193600 19828 18446744073709551615 1 1 0 0 0 0 1006249984 0 2143420159 0 0 0 17 4 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+proc_stat:1842      pid:1842	token:(dockerd)	ppid:1
+/proc/1865/stat
+total string:
+1865 (whoopsie) S 1 1865 1865 0 -1 4194560 6034 0 23 0 16 2 0 0 20 0 3 0 1762 264011776 5387 18446744073709551615 1 1 0 0 0 0 0 4096 16386 0 0 0 17 7 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0
+
+proc_statrm -f pstree-64 pstree-32 pstree-64.so pstree-32.so
