@@ -77,6 +77,11 @@ void print_pstree() {
     }
     FD = opendir(proc_dir);
 
+
+    char *pname=malloc(32);
+
+
+
     while(NULL!=(in_file= readdir(FD))){
         if(!strcmp(in_file->d_name, "."))
             continue;
@@ -125,7 +130,6 @@ void print_pstree() {
         tofree = string;
 
         int pid,ppid;
-        char *pname=malloc(32);
 
         printf("total string:\n%s\n",string);
 
@@ -155,10 +159,12 @@ void print_pstree() {
         free(tofree);
         fclose(fp);
         free(buffer);
+        free(string);
+        free(token);
         //exit(1);
 
     } 
-
+    free(pname);
 
 
 }
