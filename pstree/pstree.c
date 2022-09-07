@@ -120,7 +120,7 @@ void print_pstree() {
         char* string;
         char* tofree;
 
-        ptree *leaf = malloc(sizeof(ptree));
+        //ptree *leaf = malloc(sizeof(ptree));
         string = strdup(buffer);
         tofree = string;
 
