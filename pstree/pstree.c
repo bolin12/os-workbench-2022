@@ -104,7 +104,8 @@ void print_pstree() {
         FILE *fp = fopen(stat_path,"r");
         if(!fp){
             perror("File opening failed");
-            exit(1);
+            continue;
+            //exit(1);
         }
 
 
