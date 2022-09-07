@@ -159,7 +159,7 @@ void print_pstree() {
         free(tofree);
         fclose(fp);
         free(buffer);
-        free(string);
+       // free(string);
         free(token);
         //exit(1);
 
