@@ -11,8 +11,7 @@
 
 
 typedef struct{
-
-    size_t pid, ppid;
+    size_t ppid,pid;
     char *pname;
 
 }PData;
@@ -21,7 +20,7 @@ typedef struct{
 /* hashmap related */
 typedef struct{
     size_t key;
-    PData pdata;
+    PData pdata_val;
 
 }DataType; 
 
@@ -198,24 +197,51 @@ void print_pstree() {
         //exit(1);
 
     } 
-    
+
     /* build hashmap realted */
-    
-    
-   /* build hashmap OK */ 
+
+
+    /* build hashmap OK */ 
 }
 
-       
+
 HashMap * createHashMap(PData *parr, size_t size) {
-    
+
     HashMap * hashmap=(HashMap *)malloc(sizeof(HashMap));
     hashmap->size = 2*size;
     hashmap->table = (HashNode *)malloc(sizeof(HashNode)*hashmap->size);
 
     int j=0;
     for(j=0;j<hashmap->size;j++){
-        hashmap->table[j].data.pdata = INT_MIN;
-    
-    }
+        hashmap->table[j].data.pdata_val.pid = INT_MIN;
+        hashmap->table[j].next=NULL; 
 
+    }
+    int i=0;
+    while(i<size){
+        int pos = abs(parr[i].pid)%hashmap->size;
+
+        // judge if not conflict
+        if(hashmap->table[pos].data.pdata_val.pid==INT_MIN){
+            hashmap->table[pos].data.key = i;
+            hashmap->table[pos].data.pdata_val= parr[i];
+        }
+
+        else{
+            HashNode * lnode = (HashNode*)malloc(sizeof(HashNode)),*hashnode;
+            lnode->data.key = i;
+            lnode->data.pdata_val=parr[i];
+            lnode->next = NULL;
+            hashnode = &(hashmap->table[pos]);
+            while(hashnode->next!=NULL){
+                hashnode = hashnode->next;
+            
+            }
+            hashnode->next = lnode;
+        
+        
+        }
+        i++; 
+    }
+    return hashmap;
 }
