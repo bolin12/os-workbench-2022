@@ -185,8 +185,8 @@ void print_pstree() {
         printf("token:%-30s", pname);
         printf("ppid:%zu\n", ppid);
 
-        pdata_store[pdata_idx].pid = 1234;
-        pdata_store[pdata_idx].ppid = 114514;
+        pdata_store[pdata_idx].pid = pid;
+        pdata_store[pdata_idx].ppid = ppid;
         pdata_store[pdata_idx].pname = malloc(strlen(pname));
         strcpy(pdata_store[pdata_idx].pname, pname);
         //printf("pdata_name: %s\n", pdata_store[pdata_idx].pname);
