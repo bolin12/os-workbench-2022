@@ -14,6 +14,13 @@ typedef struct ProcTree{
     struct ProcTree **childs;
 }ptree;
 
+typedef struct ProcNode{
+
+    size_t pid,ppid;
+    char *pname;
+}pnode;
+
+
 enum {
     VERSION, BYNAME, PIDCONTAIN
 };
@@ -128,7 +135,7 @@ void print_pstree() {
         int pid,ppid;
         char *pname=malloc(64);
 
-        printf("total string:\n%s\n",string);
+       // printf("total string:\n%s\n",string);
 
         while(NULL!=(token = strsep(&string, " "))){
             //printf("space_idx:%d\n",space_idx);
@@ -148,10 +155,16 @@ void print_pstree() {
 
             space_idx++;
         }
-        printf("proc_stat:%d      ",atoi(in_file->d_name));
+        //printf("proc_stat:%d      ",atoi(in_file->d_name));
         printf("pid:%d\t",pid);
         printf("token:%s\t", pname);
         printf("ppid:%d\n", ppid);
+
+        
+        
+
+
+
 
         free(tofree);
         fclose(fp);
