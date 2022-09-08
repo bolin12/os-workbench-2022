@@ -99,7 +99,7 @@ void print_pstree() {
         strcat(stat_path, "/");
         strcat(stat_path, in_file->d_name);
         strcat(stat_path, "/stat");
-        printf("%s\n", stat_path);
+        //printf("%s\n", stat_path);
         /***********************************************/
 
 
