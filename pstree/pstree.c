@@ -186,6 +186,7 @@ void print_pstree() {
 
         pdata_store[pdata_idx].pid = pid;
         pdata_store[pdata_idx].ppid = ppid;
+        pdata_store[pdata_idx].pname = malloc(strlen(pname));
         strcpy(pdata_store[pdata_idx].pname, pname);
         printf("pdata_name: %s\n", pdata_store[pdata_idx].pname);
 
