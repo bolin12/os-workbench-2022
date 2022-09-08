@@ -8,17 +8,38 @@
 #include <assert.h>
 #include <string.h>
 
-typedef struct ProcTree{
+
+typedef struct{
+
     size_t pid, ppid;
+    char *name;
+
+}PData;
+
+
+/* hashmap related */
+typedef struct{
+    size_t key;
+    PData pdata;
+
+}DataType; 
+
+typedef struct{
+    DataType data;
+    struct HashNode *next;
+}HashNode;
+typedef struct{
+    int size;
+    HashNode *table;
+}HashMap;
+
+
+/* hashmap end */
+typedef struct ProcTree{
+    PData pdata;
     struct ProcTree *parent;
     struct ProcTree **childs;
 }ptree;
-
-typedef struct ProcNode{
-
-    size_t pid,ppid;
-    char *pname;
-}pnode;
 
 
 enum {
@@ -135,7 +156,7 @@ void print_pstree() {
         int pid,ppid;
         char *pname=malloc(64);
 
-       // printf("total string:\n%s\n",string);
+        // printf("total string:\n%s\n",string);
 
         while(NULL!=(token = strsep(&string, " "))){
             //printf("space_idx:%d\n",space_idx);
@@ -159,9 +180,6 @@ void print_pstree() {
         printf("pid:%d\t",pid);
         printf("token:%s\t", pname);
         printf("ppid:%d\n", ppid);
-
-        
-        
 
 
 
