@@ -180,7 +180,7 @@ void print_pstree() {
             space_idx++;
         }
         printf("pid:%zu\t",pid);
-        printf("token:%-20s", pname);
+        printf("token:%-30s", pname);
         printf("ppid:%zu\n", ppid);
 
         pdata_store[pdata_idx].pid = pid;
