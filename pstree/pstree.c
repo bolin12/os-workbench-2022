@@ -24,10 +24,11 @@ typedef struct{
 
 }DataType; 
 
-typedef struct{
+typedef struct _HashNode{
     DataType data;
-    struct HashNode *next;
+    struct _HashNode *next;
 }HashNode;
+
 typedef struct{
     int size;
     HashNode *table;
