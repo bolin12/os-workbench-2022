@@ -179,7 +179,6 @@ void print_pstree() {
 
             space_idx++;
         }
-        //printf("proc_stat:%d      ",atoi(in_file->d_name));
         printf("pid:%zu\t",pid);
         printf("token:%s\t", pname);
         printf("ppid:%zu\n", ppid);
@@ -188,8 +187,8 @@ void print_pstree() {
         pdata_store[pdata_idx].ppid = ppid;
         pdata_store[pdata_idx].pname = malloc(strlen(pname));
         strcpy(pdata_store[pdata_idx].pname, pname);
-        printf("pdata_name: %s\n", pdata_store[pdata_idx].pname);
-
+        //printf("pdata_name: %s\n", pdata_store[pdata_idx].pname);
+        pdata_idx++;
 
         free(tofree);
         fclose(fp);
@@ -198,11 +197,17 @@ void print_pstree() {
         //exit(1);
 
     } 
+    
+    /* build hashmap realted */
 
+    for(int i=0;i<pdata_idx;i++){
+        size_t cur_pid = pdata_store[i].pid; 
 
+    }
+    
+   /* build hashmap OK */ 
 
-}
-
+       
 //HashMap * createHashMap(){
 
 
