@@ -180,9 +180,9 @@ void print_pstree() {
             space_idx++;
         }
         //printf("proc_stat:%d      ",atoi(in_file->d_name));
-        printf("pid:%d\t",pid);
+        printf("pid:%zu\t",pid);
         printf("token:%s\t", pname);
-        printf("ppid:%d\n", ppid);
+        printf("ppid:%zu\n", ppid);
 
         pdata_store[pdata_idx].pid = pid;
         pdata_store[pdata_idx].ppid = ppid;
