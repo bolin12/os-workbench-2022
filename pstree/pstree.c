@@ -65,9 +65,6 @@ struct dirent * in_file;
 
 int main(int argc, char *argv[]) {
     assert(argv[0]);
-    ptree * root = malloc(sizeof(ptree));
-    root->pid = 0;
-    root->ppid = -1;
 
 
     for (int i = 1; i < argc; i++) {
@@ -104,6 +101,12 @@ void print_pstree() {
         return ; 
     }
     FD = opendir(proc_dir);
+
+
+    /* for pnode data store*/
+    int pdata_idx=0;
+    PData pdata_store[128];
+
 
     while(NULL!=(in_file= readdir(FD))){
         if(!strcmp(in_file->d_name, "."))
@@ -153,7 +156,7 @@ void print_pstree() {
         string = strdup(buffer);
         tofree = string;
 
-        int pid,ppid;
+        size_t pid,ppid;
         char *pname=malloc(64);
 
         // printf("total string:\n%s\n",string);
@@ -181,6 +184,9 @@ void print_pstree() {
         printf("token:%s\t", pname);
         printf("ppid:%d\n", ppid);
 
+        pdata_store[pdata_idx].pid = pid;
+        pdata_store[pdata_idx].ppid = ppid;
+        strcpy(pdata_store[pdata_idx].pname, pname);
 
 
 
@@ -196,3 +202,7 @@ void print_pstree() {
 
 }
 
+HashMap * createHashMap(){
+
+
+}
