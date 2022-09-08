@@ -202,7 +202,7 @@ void print_pstree() {
 
     /* build hashmap realted */
 
-    HashMap * hashmap = CreateHashMap(pdata_store, 256);
+    HashMap * hashmap = CreateHashMap(pdata_store, 32);
     /* build hashmap OK */ 
 }
 
