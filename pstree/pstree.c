@@ -158,7 +158,7 @@ void print_pstree() {
         string = strdup(buffer);
         tofree = string;
 
-        size_t pid,ppid;
+        size_t pid=114514,ppid=1919810;
         char *pname=malloc(64);
 
         // printf("total string:\n%s\n",string);
@@ -237,11 +237,11 @@ HashMap * CreateHashMap(PData *parr, size_t size) {
             hashnode = &(hashmap->table[pos]);
             while(hashnode->next!=NULL){
                 hashnode = hashnode->next;
-            
+
             }
             hashnode->next = lnode;
-        
-        
+
+
         }
         i++; 
     }
