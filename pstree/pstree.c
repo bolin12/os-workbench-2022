@@ -12,7 +12,7 @@
 typedef struct{
 
     size_t pid, ppid;
-    char *name;
+    char *pname;
 
 }PData;
 
