@@ -1,4 +1,4 @@
-#include <stdio.h>
+
 #include <limits.h>
 #include <stdlib.h>
 #include <string.h>
@@ -47,6 +47,7 @@ enum {
     VERSION, BYNAME, PIDCONTAIN
 };
 
+HashMap *CreateHashMap(PData *parr, size_t size);
 
 const char *proc_dir = "/proc";
 const char *version = "pstree (PSmisc) BLmimic\n\
@@ -201,12 +202,12 @@ void print_pstree() {
 
     /* build hashmap realted */
 
-
+    HashMap * hashmap = CreateHashMap(pdata_store, 128);
     /* build hashmap OK */ 
 }
 
 
-HashMap * createHashMap(PData *parr, size_t size) {
+HashMap * CreateHashMap(PData *parr, size_t size) {
 
     HashMap * hashmap=(HashMap *)malloc(sizeof(HashMap));
     hashmap->size = 2*size;
