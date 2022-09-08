@@ -204,7 +204,7 @@ void print_pstree() {
 
     HashMap * hashmap = CreateHashMap(pdata_store, 32);
     /* build hashmap OK */ 
-    printf("OK!\n")
+    printf("OK!\n");
 }
 
 
