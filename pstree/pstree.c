@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <limits.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
@@ -199,16 +200,22 @@ void print_pstree() {
     } 
     
     /* build hashmap realted */
-
-    for(int i=0;i<pdata_idx;i++){
-        size_t cur_pid = pdata_store[i].pid; 
-
-    }
+    
     
    /* build hashmap OK */ 
+}
 
        
-//HashMap * createHashMap(){
+HashMap * createHashMap(PData *parr, size_t size) {
+    
+    HashMap * hashmap=(HashMap *)malloc(sizeof(HashMap));
+    hashmap->size = 2*size;
+    hashmap->table = (HashNode *)malloc(sizeof(HashNode)*hashmap->size);
 
+    int j=0;
+    for(j=0;j<hashmap->size;j++){
+        hashmap->table[j].data.pdata = INT_MIN;
+    
+    }
 
 }
