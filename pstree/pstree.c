@@ -204,7 +204,7 @@ void print_pstree() {
         free(pname);
         //exit(1);
         printf("***   this loop been on %d times! *** \n", pdata_idx);
-        if(pdata_idx>125)break;
+        if(pdata_idx>140)break;
 
     } 
 
@@ -212,7 +212,10 @@ void print_pstree() {
 
     HashMap * hashmap = CreateHashMap(pdata_store,pdata_idx);
     /* build hashmap OK */ 
-    printf("OK!\n");
+    printf("HashMap created OK!\n");
+
+    
+
     DestoryHashMap(hashmap);
     return;
 }
