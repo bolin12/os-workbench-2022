@@ -74,12 +74,10 @@ int main(int argc, char *argv[]) {
 
         if(!strcmp(argv[i], "-V")){
             printf("%s\n", version);
-            return 0;
         }
         else if(!strcmp(argv[i], "-p")){
             flag=PIDCONTAIN;
             print_pstree();
-            return 0;
         }else if(!strcmp(argv[i], "-n")){
             flag = BYNAME;
             print_pstree();
