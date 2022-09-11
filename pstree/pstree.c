@@ -217,6 +217,7 @@ void print_pstree() {
     HashMap * hashmap = CreateHashMap(pdata_store, 32);
     /* build hashmap OK */ 
     printf("OK!\n");
+    DestoryHashMap(hashmap);
     return;
 }
 
@@ -260,4 +261,27 @@ HashMap * CreateHashMap(PData *parr, size_t size) {
         i++; 
     }
     return hashmap;
+}
+
+
+void DestoryHashMap(HashMap *hashmap){
+
+    int i=0;
+    HashNode * hpointer;
+    while(i<hashmap->size){
+        hpointer=hashmap->table[i].next;
+        while(hpointer!=NULL){
+            hashmap->table[i].next = hpointer->next;
+
+            free(hpointer);
+            hpointer=hashmap->table[i].next;
+
+        
+        }
+        i++;
+    
+    }
+    free(hashmap->table);
+    free(hashmap);
+    printf("Destory hashmap Success!\n");
 }
