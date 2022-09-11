@@ -8,7 +8,7 @@ endif
 
 SRCS   := $(shell find . -maxdepth 1 -name "*.c")
 DEPS   := $(shell find . -maxdepth 1 -name "*.h") $(SRCS)
-CFLAGS += -O1 -std=gnu11 -ggdb -Wall -Werror -Wno-unused-result -Wno-unused-value -Wno-unused-variable
+CFLAGS += -O1 -std=gnu11  -Wall -Werror -Wno-unused-result -Wno-unused-value -Wno-unused-variable -g
 
 .PHONY: all git test clean commit-and-make
 
@@ -16,6 +16,8 @@ CFLAGS += -O1 -std=gnu11 -ggdb -Wall -Werror -Wno-unused-result -Wno-unused-valu
 commit-and-make: git all
 
 $(NAME)-64: $(DEPS) # 64bit binary
+	@echo $(DEPS)
+	@echo $(LDFLAGS)
 	gcc -m64 $(CFLAGS) $(SRCS) -o $@ $(LDFLAGS)
 
 $(NAME)-32: $(DEPS) # 32bit binary
