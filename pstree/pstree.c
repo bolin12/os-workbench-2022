@@ -215,7 +215,7 @@ void print_pstree() {
 
     /* build hashmap realted */
 
-    HashMap * hashmap = CreateHashMap(pdata_store, 10000);
+    HashMap * hashmap = CreateHashMap(pdata_store, 64);
     /* build hashmap OK */ 
     printf("OK!\n");
     DestoryHashMap(hashmap);
@@ -236,6 +236,7 @@ HashMap * CreateHashMap(PData *parr, size_t size) {
 
     }
     int i=0;
+    printf("size:%zu\n", size);
     while(i<size){
         int pos = abs(parr[i].pid)%hashmap->size;
 
