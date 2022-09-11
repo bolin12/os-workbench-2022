@@ -115,8 +115,6 @@ void print_pstree() {
     int pdata_idx=0;
     PData pdata_store[128];
 
-
-    int loop_idx=0;
     while(NULL!=(in_file= readdir(FD))){
 
         if(!strcmp(in_file->d_name, "."))
@@ -207,15 +205,14 @@ void print_pstree() {
         //exit(1);
         //
         //
-        printf("***   this loop been on %d times! *** \n", loop_idx);
-        loop_idx++;
+        printf("***   this loop been on %d times! *** \n", pdata_idx);
         //if(loop_idx >256)break;
 
     } 
 
     /* build hashmap realted */
 
-    HashMap * hashmap = CreateHashMap(pdata_store, 64);
+    HashMap * hashmap = CreateHashMap(pdata_store,pdata_idx);
     /* build hashmap OK */ 
     printf("OK!\n");
     DestoryHashMap(hashmap);
