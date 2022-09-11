@@ -204,7 +204,7 @@ void print_pstree() {
         free(pname);
         //exit(1);
         printf("***   this loop been on %d times! *** \n", pdata_idx);
-        if(pdata_idx>138)break;
+        if(pdata_idx>32)break;
 
     } 
 
@@ -224,7 +224,7 @@ void print_pstree() {
 HashMap * CreateHashMap(PData *parr, size_t size) {
 
     HashMap * hashmap=(HashMap *)malloc(sizeof(HashMap));
-    hashmap->size = size;
+    hashmap->size = 10*size;
     hashmap->table = (HashNode *)malloc(sizeof(HashNode)*hashmap->size);
 
     int j=0;
