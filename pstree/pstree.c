@@ -48,6 +48,7 @@ enum {
 };
 
 HashMap *CreateHashMap(PData *parr, size_t size);
+void DestoryHashMap(HashMap * hashmap);
 
 const char *proc_dir = "/proc";
 const char *version = "pstree (PSmisc) BLmimic\n\
