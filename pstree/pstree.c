@@ -21,7 +21,6 @@ typedef struct{
 typedef struct{
     size_t key;
     PData pdata_val;
-
 }DataType; 
 
 typedef struct _HashNode{
