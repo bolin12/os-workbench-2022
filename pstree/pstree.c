@@ -84,9 +84,14 @@ int main(int argc, char *argv[]) {
             flag = BYNAME;
             print_pstree();
         }else{
-            print_pstree();
             printf("No such argument: %s\n", argv[i]);
         }
+    }
+    if( argc<2){
+        print_pstree();
+
+        printf("No  argument found!\n");
+
     }
     assert(!argv[argc]);
     printf("**** finish correctly!\n");
