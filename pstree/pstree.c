@@ -113,7 +113,7 @@ void print_pstree() {
 
     /* for pnode data store*/
     int pdata_idx=0;
-    PData pdata_store[128];
+    PData pdata_store[512];
 
     while(NULL!=(in_file= readdir(FD))){
 
