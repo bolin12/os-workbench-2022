@@ -224,7 +224,7 @@ void print_pstree() {
 HashMap * CreateHashMap(PData *parr, size_t size) {
 
     HashMap * hashmap=(HashMap *)malloc(sizeof(HashMap));
-    hashmap->size = 10*size;
+    hashmap->size = 2*size;
     hashmap->table = (HashNode *)malloc(sizeof(HashNode)*hashmap->size);
 
     int j=0;
