@@ -210,6 +210,7 @@ void print_pstree() {
         //
         printf("***   this loop been on %d times! *** \n", loop_idx);
         loop_idx++;
+        if(loop_idx >32)break;
 
     } 
 
