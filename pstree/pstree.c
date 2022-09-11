@@ -143,7 +143,7 @@ void print_pstree() {
         FILE *fp = fopen(stat_path,"r");
         if(!fp){
             perror("File opening failed");
-            continue;
+    
             //exit(1);
         }
 
@@ -204,7 +204,7 @@ void print_pstree() {
         free(pname);
         //exit(1);
         printf("***   this loop been on %d times! *** \n", pdata_idx);
-        //if(pdata_idx>32)break;
+        if(pdata_idx>100)break;
 
     } 
 
