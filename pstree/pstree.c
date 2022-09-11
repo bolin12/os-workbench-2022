@@ -84,6 +84,7 @@ int main(int argc, char *argv[]) {
             flag = BYNAME;
             print_pstree();
         }else{
+            print_pstree();
             printf("No such argument: %s\n", argv[i]);
         }
     }
@@ -111,7 +112,9 @@ void print_pstree() {
     PData pdata_store[128];
 
 
+    int loop_idx=0;
     while(NULL!=(in_file= readdir(FD))){
+
         if(!strcmp(in_file->d_name, "."))
             continue;
         if(!strcmp(in_file->d_name, ".."))
@@ -198,6 +201,9 @@ void print_pstree() {
         free(buffer);
         free(pname);
         //exit(1);
+        //
+        //
+        printf("***   this loop been on %d times! *** \n", loop_idx);
 
     } 
 
