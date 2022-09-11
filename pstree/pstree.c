@@ -203,10 +203,8 @@ void print_pstree() {
         free(buffer);
         free(pname);
         //exit(1);
-        //
-        //
         printf("***   this loop been on %d times! *** \n", pdata_idx);
-        //if(loop_idx >256)break;
+        if(pdata_idx>32)break;
 
     } 
 
