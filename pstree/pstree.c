@@ -182,10 +182,10 @@ void print_pstree() {
 
             space_idx++;
         }
-        printf("pid:%zu\t",pid);
-        printf("token:%-30s", pname);
-        printf("ppid:%zu\n", ppid);
-
+//        printf("pid:%zu\t",pid);
+//        printf("token:%-30s", pname);
+//        printf("ppid:%zu\n", ppid);
+//
         pdata_store[pdata_idx].pid = pid;
         pdata_store[pdata_idx].ppid = ppid;
         pdata_store[pdata_idx].pname = malloc(strlen(pname));
