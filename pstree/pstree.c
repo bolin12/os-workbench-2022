@@ -204,7 +204,7 @@ void print_pstree() {
         free(pname);
         //exit(1);
         printf("***   this loop been on %d times! *** \n", pdata_idx);
-        if(pdata_idx>135)break;
+        if(pdata_idx>138)break;
 
     } 
 
