@@ -92,7 +92,7 @@ int main(int argc, char *argv[]) {
 
     }
     assert(!argv[argc]);
-    printf("**** finish correctly!\n");
+    printf("**** finish correctly! *****\n");
     return 0;
 }
 
