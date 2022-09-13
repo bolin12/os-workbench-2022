@@ -55,6 +55,7 @@ enum {
 
 HashMap *CreateHashMap(PTArr ptarr, size_t size);
 void DestoryHashMap(HashMap * hashmap);
+void PrintHashMap(HashMap * hashMap);
 
 const char *proc_dir = "/proc";
 const char *version = "pstree (PSmisc) BLmimic\n\
@@ -224,13 +225,14 @@ void print_pstree() {
 
 
     PTree *root = (PTree *) malloc(sizeof(PTree));
-    for (int i=0;i<pdata_idx;i++){
-
-        if(i==0){
-            
-        
-        }
-    } 
+    PrintHashMap(hashmap);
+//    for (int i=0;i<pdata_idx;i++){
+//
+//        if(i==0){
+//
+//
+//        }
+//    }
 
 
 
@@ -254,18 +256,20 @@ HashMap * CreateHashMap(PTArr ptarr, size_t size) {
     int i=0;
     printf("size:%zu\n", size);
     while(i<size){
-        int pos = abs(ptarr.ptarr_data[i]->pdata.pid)%hashmap->size;
+        int cur_pid = ptarr.ptarr_data[i]->pdata.pid;
+        PData cur_pdata = ptarr.ptarr_data[i]->pdata;
+        int pos = abs(cur_pid)%hashmap->size;
 
         // judge if not conflict
         if(hashmap->table[pos].data.pdata_val.pid==INT_MIN){
-            hashmap->table[pos].data.key = ptarr[i].pid;
-            hashmap->table[pos].data.pdata_val= ptarr[i];
+            hashmap->table[pos].data.key = cur_pid;
+            hashmap->table[pos].data.pdata_val= cur_pdata;
         }
 
         else{
             HashNode * lnode = (HashNode*)malloc(sizeof(HashNode)),*hashnode;
-            lnode->data.key = ptarr.ptarr_data[i]->pdata.pid;
-            lnode->data.pdata_val=ptarr.ptarr_data[i]->pdata;
+            lnode->data.key = cur_pid;
+            lnode->data.pdata_val=cur_pdata;
             lnode->next = NULL;
             hashnode = &(hashmap->table[pos]);
             while(hashnode->next!=NULL){
@@ -301,4 +305,24 @@ void DestoryHashMap(HashMap *hashmap){
     free(hashmap->table);
     free(hashmap);
     printf("Destory hashmap Success!\n");
+}
+
+void PrintHashMap(HashMap* hashmap){
+  printf("%===========PrintHashMap==========\n");
+  int i=0;
+  HashNode *pointer;
+  while(i<hashmap->size){
+    pointer=&(hashmap->table[i]);
+    while(pointer!=NULL){
+      if(pointer->data.pdata_val.pid!=INT_MIN)
+        printf("%10d",pointer->data.pdata_val.pid);
+      else
+        printf("        [ ]");
+      pointer=pointer->next;
+    }
+    printf("\n---------------------------------");
+    i++;
+    printf("\n");
+  }
+  printf("===============End===============\n");
 }
