@@ -1,61 +1,56 @@
-#include <stdio.h>
+#include <assert.h>
+#include <ctype.h>
+#include <dirent.h>
+#include <errno.h>
 #include <limits.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
-#include <errno.h>
 #include <sys/types.h>
-#include <dirent.h>
-#include <assert.h>
-#include <string.h>
 
-
-typedef struct{
-    size_t ppid,pid;
+typedef struct {
+    size_t ppid, pid;
     char *pname;
 
-}PData;
-
+} PData;
 
 /* hashmap related */
-typedef struct{
+typedef struct {
     size_t key;
     PData pdata_val;
-}DataType; 
+} DataType;
 
-typedef struct _HashNode{
+typedef struct _HashNode {
     DataType data;
     struct _HashNode *next;
-}HashNode;
+} HashNode;
 
-typedef struct{
+typedef struct {
     int size;
     HashNode *table;
-}HashMap;
-
+} HashMap;
 
 /* hashmap end */
-typedef struct ProcTree{
+typedef struct ProcTree {
     PData pdata;
     struct ProcTree *parent;
     struct ProcTree *child;
-}PTree;
+} PTree;
 
-
-
-typedef struct _PTArr{
+typedef struct _PTArr {
     PTree *ptarr_data[512];
 
-}PTArr;
-
+} PTArr;
 
 enum {
     VERSION, BYNAME, PIDCONTAIN
 };
 
 HashMap *CreateHashMap(PTArr ptarr, size_t size);
-void DestoryHashMap(HashMap * hashmap);
-void PrintHashMap(HashMap * hashMap);
+
+void DestoryHashMap(HashMap *hashmap);
+
+void PrintHashMap(HashMap *hashMap);
 
 const char *proc_dir = "/proc";
 const char *version = "pstree (PSmisc) BLmimic\n\
@@ -65,39 +60,36 @@ const char *version = "pstree (PSmisc) BLmimic\n\
                        This is free software, and you are welcome to redistribute it under\n\
                        the terms of the GNU General Public License.\n\
                        For more information about these matters, see the files named COPYING.";
-int flag=BYNAME;
+int flag = BYNAME;
+
 void print_pstree();
 
-DIR * FD;
+DIR *FD;
 
-
-struct dirent * in_file;
+struct dirent *in_file;
 
 int main(int argc, char *argv[]) {
     assert(argv[0]);
 
-
     for (int i = 1; i < argc; i++) {
         assert(argv[i]);
 
-        if(!strcmp(argv[i], "-V")){
+        if (!strcmp(argv[i], "-V")) {
             printf("%s\n", version);
-        }
-        else if(!strcmp(argv[i], "-p")){
-            flag=PIDCONTAIN;
+        } else if (!strcmp(argv[i], "-p")) {
+            flag = PIDCONTAIN;
             print_pstree();
-        }else if(!strcmp(argv[i], "-n")){
+        } else if (!strcmp(argv[i], "-n")) {
             flag = BYNAME;
             print_pstree();
-        }else{
+        } else {
             printf("No such argument: %s\n", argv[i]);
         }
     }
-    if( argc<2){
+    if (argc < 2) {
         print_pstree();
 
         printf("No  argument found!\n");
-
     }
     assert(!argv[argc]);
     printf("**** finish correctly! *****\n");
@@ -105,96 +97,90 @@ int main(int argc, char *argv[]) {
 }
 
 void print_pstree() {
-    if(flag==VERSION){
+    if (flag == VERSION) {
 
         printf("%s\n", version);
         return;
     }
 
-    if(NULL == (FD = opendir(proc_dir))){
-        fprintf(stderr, "Error: Failed to open input directory - %s\n", strerror(errno));
-        return ; 
+    if (NULL == (FD = opendir(proc_dir))) {
+        fprintf(stderr, "Error: Failed to open input directory - %s\n",
+                strerror(errno));
+        return;
     }
     FD = opendir(proc_dir);
 
-
     /* for pnode data store*/
-    int pdata_idx=0;
+    int pdata_idx = 0;
     PTArr ptarr;
+    while (NULL != (in_file = readdir(FD))) {
 
-    while(NULL!=(in_file= readdir(FD))){
-
-        if(!strcmp(in_file->d_name, "."))
+        if (!strcmp(in_file->d_name, "."))
             continue;
-        if(!strcmp(in_file->d_name, ".."))
+        if (!strcmp(in_file->d_name, ".."))
             continue;
-        if(in_file->d_type != 4)
+        if (in_file->d_type != 4)
             continue;
-        if(!isdigit(in_file->d_name[0]))
-            continue; 
+        if (!isdigit(in_file->d_name[0]))
+            continue;
         char stat_path[100];
         stat_path[0] = '\0';
         strcat(stat_path, proc_dir);
         strcat(stat_path, "/");
         strcat(stat_path, in_file->d_name);
         strcat(stat_path, "/stat");
-        //printf("%s\n", stat_path);
+        // printf("%s\n", stat_path);
         /***********************************************/
 
-
-
         int c;
-        long  lSize;
-        char * buffer  = malloc(512*sizeof(char));
+        long lSize;
+        char *buffer = malloc(512 * sizeof(char));
 
-        FILE *fp = fopen(stat_path,"r");
-        if(!fp){
+        FILE *fp = fopen(stat_path, "r");
+        if (!fp) {
             perror("File opening failed");
 
-            //exit(1);
+            // exit(1);
         }
-
 
         int cur_idx = 0;
-        while(EOF!=(c = fgetc(fp))){
+        while (EOF != (c = fgetc(fp))) {
             buffer[cur_idx] = c;
-            cur_idx++; 
-
+            cur_idx++;
         }
 
-        int space_idx=0;
-        char* token;
-        char* string;
-        char* tofree;
+        int space_idx = 0;
+        char *token;
+        char *string;
+        char *tofree;
 
-        //ptree *leaf = malloc(sizeof(ptree));
+        // ptree *leaf = malloc(sizeof(ptree));
         string = strdup(buffer);
         tofree = string;
 
-        size_t pid=114514,ppid=1919810;
-        char *pname=malloc(64);
+        size_t pid = 114514, ppid = 1919810;
+        char *pname = malloc(64);
 
         // printf("total string:\n%s\n",string);
 
-        while(NULL!=(token = strsep(&string, " "))){
-            //printf("space_idx:%d\n",space_idx);
-            if(space_idx==4)break;
+        while (NULL != (token = strsep(&string, " "))) {
+            // printf("space_idx:%d\n",space_idx);
+            if (space_idx == 4)
+                break;
 
-            if(space_idx==0){
-                pid = atoi(token); 
+            if (space_idx == 0) {
+                pid = atoi(token);
             }
-            if(space_idx==1){
-                strcpy(pname, token); 
+            if (space_idx == 1) {
+                strcpy(pname, token);
             }
-            if(space_idx==3){
+            if (space_idx == 3) {
                 ppid = atoi(token);
             }
 
-
-
             space_idx++;
         }
-        printf("pid:%zu\t",pid);
+        printf("pid:%zu\t", pid);
         printf("token:%-30s", pname);
         printf("ppid:%zu\n", ppid);
 
@@ -203,126 +189,112 @@ void print_pstree() {
         tmp_pdata.ppid = ppid;
         tmp_pdata.pname = malloc(strlen(pname));
         strcpy(tmp_pdata.pname, pname);
-        
-        ptarr.ptarr_data[pdata_idx] = (PTree *)malloc(sizeof(PTree));
+
+        ptarr.ptarr_data[pdata_idx] = (PTree *) malloc(sizeof(PTree));
         ptarr.ptarr_data[pdata_idx]->pdata = tmp_pdata;
-        //printf("pdata_name: %s\n", pdata_store[pdata_idx].pname);
+        // printf("pdata_name: %s\n", pdata_store[pdata_idx].pname);
         pdata_idx++;
 
         free(tofree);
         fclose(fp);
         free(buffer);
         free(pname);
-//        printf("***   this loop been on %d times! *** \n", pdata_idx);
-
-    } 
+        //        printf("***   this loop been on %d times! *** \n", pdata_idx);
+    }
 
     /* build hashmap realted */
 
-    HashMap * hashmap = CreateHashMap(ptarr,pdata_idx);
-    /* build hashmap OK */ 
+    HashMap *hashmap = CreateHashMap(ptarr, pdata_idx);
+    /* build hashmap OK */
     printf("HashMap created OK!\n");
 
-
     PTree *root = (PTree *) malloc(sizeof(PTree));
-    PrintHashMap(hashmap);
-//    for (int i=0;i<pdata_idx;i++){
-//
-//        if(i==0){
-//
-//
-//        }
-//    }
-
-
+    //    PrintHashMap(hashmap);
+    //    for (int i=0;i<pdata_idx;i++){
+    //
+    //        if(i==0){
+    //
+    //
+    //        }
+    //    }
 
     DestoryHashMap(hashmap);
     return;
 }
 
+HashMap *CreateHashMap(PTArr ptarr, size_t size) {
 
-HashMap * CreateHashMap(PTArr ptarr, size_t size) {
+    HashMap *hashmap = (HashMap *) malloc(sizeof(HashMap));
+    hashmap->size = 2 * size;
+    hashmap->table = (HashNode *) malloc(sizeof(HashNode) * hashmap->size);
 
-    HashMap * hashmap=(HashMap *)malloc(sizeof(HashMap));
-    hashmap->size = 2*size;
-    hashmap->table = (HashNode *)malloc(sizeof(HashNode)*hashmap->size);
-
-    int j=0;
-    for(j=0;j<hashmap->size;j++){
+    int j = 0;
+    for (j = 0; j < hashmap->size; j++) {
         hashmap->table[j].data.pdata_val.pid = INT_MIN;
-        hashmap->table[j].next=NULL; 
-
+        hashmap->table[j].next = NULL;
     }
-    int i=0;
+    int i = 0;
     printf("size:%zu\n", size);
-    while(i<size){
+    while (i < size) {
         int cur_pid = ptarr.ptarr_data[i]->pdata.pid;
         PData cur_pdata = ptarr.ptarr_data[i]->pdata;
-        int pos = abs(cur_pid)%hashmap->size;
+        int pos = abs(cur_pid) % hashmap->size;
 
         // judge if not conflict
-        if(hashmap->table[pos].data.pdata_val.pid==INT_MIN){
+        if (hashmap->table[pos].data.pdata_val.pid == INT_MIN) {
             hashmap->table[pos].data.key = cur_pid;
-            hashmap->table[pos].data.pdata_val= cur_pdata;
-        }
-
-        else{
-            HashNode * lnode = (HashNode*)malloc(sizeof(HashNode)),*hashnode;
+            hashmap->table[pos].data.pdata_val = cur_pdata;
+        } else {
+            HashNode *lnode = (HashNode *) malloc(sizeof(HashNode)), *hashnode;
             lnode->data.key = cur_pid;
-            lnode->data.pdata_val=cur_pdata;
+            lnode->data.pdata_val = cur_pdata;
             lnode->next = NULL;
             hashnode = &(hashmap->table[pos]);
-            while(hashnode->next!=NULL){
+            while (hashnode->next != NULL) {
                 hashnode = hashnode->next;
-
             }
             hashnode->next = lnode;
-
         }
-        i++; 
+        i++;
     }
     return hashmap;
 }
 
+void DestoryHashMap(HashMap *hashmap) {
 
-void DestoryHashMap(HashMap *hashmap){
-
-    int i=0;
-    HashNode * hpointer;
-    while(i<hashmap->size){
-        hpointer=hashmap->table[i].next;
-        while(hpointer!=NULL){
+    int i = 0;
+    HashNode *hpointer;
+    while (i < hashmap->size) {
+        hpointer = hashmap->table[i].next;
+        while (hpointer != NULL) {
             hashmap->table[i].next = hpointer->next;
 
             free(hpointer);
-            hpointer=hashmap->table[i].next;
-
-
+            hpointer = hashmap->table[i].next;
         }
         i++;
-
     }
     free(hashmap->table);
     free(hashmap);
     printf("Destory hashmap Success!\n");
 }
 
-void PrintHashMap(HashMap* hashmap){
-  printf("===========PrintHashMap==========\n");
-  int i=0;
-  HashNode *pointer;
-  while(i<hashmap->size){
-    pointer=&(hashmap->table[i]);
-    while(pointer!=NULL){
-      if(pointer->data.pdata_val.pid!=INT_MIN)
-        printf("%zu",pointer->data.pdata_val.pid);
-      else
-        printf("        [ ]");
-      pointer=pointer->next;
+void PrintHashMap(HashMap *hashmap) {
+    printf("===========PrintHashMap==========\n");
+    int i = 0;
+    HashNode *pointer;
+    while (i < hashmap->size) {
+        pointer = &(hashmap->table[i]);
+        while (pointer != NULL) {
+            if (pointer->data.pdata_val.pid != INT_MIN)
+                printf("%zu", pointer->data.pdata_val.pid);
+            else
+                printf("        [ ]");
+            pointer = pointer->next;
+        }
+        printf("\n---------------------------------");
+        i++;
+        printf("\n");
     }
-    printf("\n---------------------------------");
-    i++;
-    printf("\n");
-  }
-  printf("===============End===============\n");
+    printf("===============End===============\n");
 }
