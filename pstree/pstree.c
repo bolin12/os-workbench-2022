@@ -315,7 +315,7 @@ void PrintHashMap(HashMap* hashmap){
     pointer=&(hashmap->table[i]);
     while(pointer!=NULL){
       if(pointer->data.pdata_val.pid!=INT_MIN)
-        printf("%10ld",pointer->data.pdata_val.pid);
+        printf("%zu",pointer->data.pdata_val.pid);
       else
         printf("        [ ]");
       pointer=pointer->next;
