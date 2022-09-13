@@ -38,15 +38,22 @@ typedef struct{
 typedef struct ProcTree{
     PData pdata;
     struct ProcTree *parent;
-    struct ProcTree **childs;
-}ptree;
+    struct ProcTree *child;
+}PTree;
+
+
+
+typedef struct _PTArr{
+    PTree *ptarr_data[512];
+
+}PTArr;
 
 
 enum {
     VERSION, BYNAME, PIDCONTAIN
 };
 
-HashMap *CreateHashMap(PData *parr, size_t size);
+HashMap *CreateHashMap(PTArr ptarr, size_t size);
 void DestoryHashMap(HashMap * hashmap);
 
 const char *proc_dir = "/proc";
@@ -112,7 +119,7 @@ void print_pstree() {
 
     /* for pnode data store*/
     int pdata_idx=0;
-    PData pdata_store[512];
+    PTArr ptarr;
 
     while(NULL!=(in_file= readdir(FD))){
 
@@ -142,7 +149,7 @@ void print_pstree() {
         FILE *fp = fopen(stat_path,"r");
         if(!fp){
             perror("File opening failed");
-    
+
             //exit(1);
         }
 
@@ -190,10 +197,14 @@ void print_pstree() {
         printf("token:%-30s", pname);
         printf("ppid:%zu\n", ppid);
 
-        pdata_store[pdata_idx].pid = pid;
-        pdata_store[pdata_idx].ppid = ppid;
-        pdata_store[pdata_idx].pname = malloc(strlen(pname));
-        strcpy(pdata_store[pdata_idx].pname, pname);
+        PData tmp_pdata;
+        tmp_pdata.pid = pid;
+        tmp_pdata.ppid = ppid;
+        tmp_pdata.pname = malloc(strlen(pname));
+        strcpy(tmp_pdata.pname, pname);
+        
+        ptarr.ptarr_data[pdata_idx] = (PTree *)malloc(sizeof(PTree));
+        ptarr.ptarr_data[pdata_idx]->pdata = tmp_pdata;
         //printf("pdata_name: %s\n", pdata_store[pdata_idx].pname);
         pdata_idx++;
 
@@ -201,26 +212,34 @@ void print_pstree() {
         fclose(fp);
         free(buffer);
         free(pname);
-        //exit(1);
         printf("***   this loop been on %d times! *** \n", pdata_idx);
-        //if(pdata_idx>128)break;
 
     } 
 
     /* build hashmap realted */
 
-    HashMap * hashmap = CreateHashMap(pdata_store,pdata_idx);
+    HashMap * hashmap = CreateHashMap(ptarr,pdata_idx);
     /* build hashmap OK */ 
     printf("HashMap created OK!\n");
 
-    
+
+    PTree *root = (PTree *) malloc(sizeof(PTree));
+    for (int i=0;i<pdata_idx;i++){
+
+        if(i==0){
+            
+        
+        }
+    } 
+
+
 
     DestoryHashMap(hashmap);
     return;
 }
 
 
-HashMap * CreateHashMap(PData *parr, size_t size) {
+HashMap * CreateHashMap(PTArr ptarr, size_t size) {
 
     HashMap * hashmap=(HashMap *)malloc(sizeof(HashMap));
     hashmap->size = 2*size;
@@ -235,18 +254,18 @@ HashMap * CreateHashMap(PData *parr, size_t size) {
     int i=0;
     printf("size:%zu\n", size);
     while(i<size){
-        int pos = abs(parr[i].pid)%hashmap->size;
+        int pos = abs(ptarr.ptarr_data[i]->pdata.pid)%hashmap->size;
 
         // judge if not conflict
         if(hashmap->table[pos].data.pdata_val.pid==INT_MIN){
-            hashmap->table[pos].data.key = i;
-            hashmap->table[pos].data.pdata_val= parr[i];
+            hashmap->table[pos].data.key = ptarr[i].pid;
+            hashmap->table[pos].data.pdata_val= ptarr[i];
         }
 
         else{
             HashNode * lnode = (HashNode*)malloc(sizeof(HashNode)),*hashnode;
-            lnode->data.key = i;
-            lnode->data.pdata_val=parr[i];
+            lnode->data.key = ptarr.ptarr_data[i]->pdata.pid;
+            lnode->data.pdata_val=ptarr.ptarr_data[i]->pdata;
             lnode->next = NULL;
             hashnode = &(hashmap->table[pos]);
             while(hashnode->next!=NULL){
@@ -254,7 +273,6 @@ HashMap * CreateHashMap(PData *parr, size_t size) {
 
             }
             hashnode->next = lnode;
-
 
         }
         i++; 
@@ -275,10 +293,10 @@ void DestoryHashMap(HashMap *hashmap){
             free(hpointer);
             hpointer=hashmap->table[i].next;
 
-        
+
         }
         i++;
-    
+
     }
     free(hashmap->table);
     free(hashmap);
