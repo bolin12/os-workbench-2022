@@ -32,9 +32,11 @@ typedef struct {
 
 /* hashmap end */
 typedef struct ProcTree {
+    int child_num;
     PData pdata;
     struct ProcTree *parent;
-    struct ProcTree *child;
+    struct ProcTree **child;
+
 } PTree;
 
 typedef struct _PTArr {
@@ -194,6 +196,9 @@ void print_pstree() {
         strcpy(tmp_pdata.pname, pname);
 
         ptarr.ptarr_data[pdata_idx] = (PTree *) malloc(sizeof(PTree));
+        ptarr.ptarr_data[pdata_idx]->child_num = 0;
+        ptarr.ptarr_data[pdata_idx]->child = NULL;
+        ptarr.ptarr_data[pdata_idx]->parent = NULL;
         ptarr.ptarr_data[pdata_idx]->pdata = tmp_pdata;
         // printf("pdata_name: %s\n", pdata_store[pdata_idx].pname);
         pdata_idx++;
@@ -226,6 +231,11 @@ void print_pstree() {
         }
         cur_parent_node = ptarr.ptarr_data[parent_key];
 
+        cur_node->parent = cur_parent_node;
+
+        cur_node->child_num++;
+        realloc(cur_node->child, sizeof(PTree *) * cur_node->child_num);
+        cur_node->
 
     }
 
