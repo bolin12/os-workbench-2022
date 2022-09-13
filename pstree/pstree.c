@@ -48,9 +48,12 @@ enum {
 
 HashMap *CreateHashMap(PTArr ptarr, size_t size);
 
+int Get(HashMap *hashmap, PData pdata);
+
 void DestoryHashMap(HashMap *hashmap);
 
 void PrintHashMap(HashMap *hashMap);
+
 
 const char *proc_dir = "/proc";
 const char *version = "pstree (PSmisc) BLmimic\n\
@@ -208,15 +211,23 @@ void print_pstree() {
     /* build hashmap OK */
     printf("HashMap created OK!\n");
 
-    PTree *root = (PTree *) malloc(sizeof(PTree));
-    //    PrintHashMap(hashmap);
-    //    for (int i=0;i<pdata_idx;i++){
-    //
-    //        if(i==0){
-    //
-    //
-    //        }
-    //    }
+    PTree *root = ptarr.ptarr_data[0];
+    PTree *cur_node;
+    PTree *cur_parent_node;
+    PrintHashMap(hashmap);
+    for (int i = 1; i < pdata_idx; i++) {
+        cur_node = ptarr.ptarr_data[i];
+        int cur_pid = cur_node->pdata.pid;
+        int cur_parent_pid = cur_node->pdata.ppid;
+        int parent_key = Get(hashmap, cur_node->pdata);
+        if (parent_key == -1) {
+            fprintf(stderr, "No such process ID!\n");
+            return;
+        }
+        cur_parent_node = ptarr.ptarr_data[parent_key];
+
+
+    }
 
     DestoryHashMap(hashmap);
     return;
@@ -242,11 +253,11 @@ HashMap *CreateHashMap(PTArr ptarr, size_t size) {
 
         // judge if not conflict
         if (hashmap->table[pos].data.pdata_val.pid == INT_MIN) {
-            hashmap->table[pos].data.key = cur_pid;
+            hashmap->table[pos].data.key = i;
             hashmap->table[pos].data.pdata_val = cur_pdata;
         } else {
             HashNode *lnode = (HashNode *) malloc(sizeof(HashNode)), *hashnode;
-            lnode->data.key = cur_pid;
+            lnode->data.key = i;
             lnode->data.pdata_val = cur_pdata;
             lnode->next = NULL;
             hashnode = &(hashmap->table[pos]);
@@ -259,6 +270,21 @@ HashMap *CreateHashMap(PTArr ptarr, size_t size) {
     }
     return hashmap;
 }
+
+int Get(HashMap *hashmap, PData pdata) {
+    int pos = abs(pdata.pid) % hashmap->size;
+    HashNode *pointer = &(hashmap->table[pos]);
+    while (pointer != NULL) {
+        if (pointer->data.pdata_val.pid == pdata.pid) {
+            return pointer->data.key;
+        } else {
+            pointer = pointer->next;
+        }
+    }
+    return -1;
+
+}
+
 
 void DestoryHashMap(HashMap *hashmap) {
 
