@@ -308,14 +308,14 @@ void DestoryHashMap(HashMap *hashmap){
 }
 
 void PrintHashMap(HashMap* hashmap){
-  printf("%===========PrintHashMap==========\n");
+  printf("===========PrintHashMap==========\n");
   int i=0;
   HashNode *pointer;
   while(i<hashmap->size){
     pointer=&(hashmap->table[i]);
     while(pointer!=NULL){
       if(pointer->data.pdata_val.pid!=INT_MIN)
-        printf("%10d",pointer->data.pdata_val.pid);
+        printf("%10ld",pointer->data.pdata_val.pid);
       else
         printf("        [ ]");
       pointer=pointer->next;
