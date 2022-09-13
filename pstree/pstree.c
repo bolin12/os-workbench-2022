@@ -213,7 +213,7 @@ void print_pstree() {
         fclose(fp);
         free(buffer);
         free(pname);
-        printf("***   this loop been on %d times! *** \n", pdata_idx);
+//        printf("***   this loop been on %d times! *** \n", pdata_idx);
 
     } 
 
