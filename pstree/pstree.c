@@ -36,6 +36,7 @@ typedef struct ProcTree {
     PData pdata;
     struct ProcTree *parent;
     struct ProcTree **child;
+    struct ProcTree *tour_ptr;
 
 } PTree;
 
