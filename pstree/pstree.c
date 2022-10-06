@@ -135,7 +135,7 @@ void print_pstree() {
         free(buffer);
         free(pname);
     }
-    printf("%d(%s)\n", 0, proc[0].proc_name);
+    printf("%s%d\n",  proc[0].proc_name,0);
     proctree_print(0, 1);
     return;
 }
