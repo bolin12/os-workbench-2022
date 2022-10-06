@@ -128,6 +128,10 @@ void print_pstree() {
         proc[proc_count].ppid = ppid;
         strcpy(proc[proc_count].proc_name, pname);
 
+        printf("pid:%d\t", proc[proc_count].pid);
+        printf("token:%-30s", proc[proc_count].ppid);
+        printf("ppid:%d\n", proc[proc_count].proc_name);
+
         proc_count++;
 
         free(tofree);
