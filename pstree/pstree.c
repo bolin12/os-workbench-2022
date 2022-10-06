@@ -133,9 +133,6 @@ void print_pstree() {
         free(buffer);
         free(pname);
     }
-
-    printf("%d(%s)\n", 0, proc[0].proc_name);
-    proctree_print(0, 1);
     return;
 }
 
@@ -180,5 +177,13 @@ int main(int argc, char *argv[]) {
     }
     assert(!argv[argc]);
     printf("**** finish correctly! *****\n");
+
+
+
+
+
+
+    printf("%d(%s)\n", 0, proc[0].proc_name);
+    proctree_print(0, 1);
     return 0;
 }
