@@ -147,7 +147,8 @@ void print_pstree() {
 void proctree_print(int pid, int step){
     
     for(int i=0;i<proc_count;i++){
-        if(proc[i].ppid== pid){
+        printf("ppid==:%d\n",proc[i].ppid);
+        if(proc[i].ppid == pid){
             for(int j=0;j<step;j++){
                 printf("      ");
             }
