@@ -147,7 +147,7 @@ void proctree_print(int pid, int step){
             for(int j=0;j<step;j++){
                 printf("      ");
             }
-            printf("%d(%s)\n", proc[i].pid, proc[i].proc_name);
+            printf("%s(%d)\n", proc[i].pid, proc[i].proc_name);
             proctree_print(proc[i].pid, step+1);
             
         }
