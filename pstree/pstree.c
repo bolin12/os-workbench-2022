@@ -97,7 +97,7 @@ void print_pstree() {
         string = strdup(buffer);
         tofree = string;
 
-        size_t pid = 114514, ppid = 1919810;
+        int pid = 114514, ppid = 1919810;
         char *pname = malloc(64);
 
 
