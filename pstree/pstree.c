@@ -57,7 +57,6 @@ void print_pstree() {
     FD = opendir(POOT_NAME);
 
     /* for pnode data store*/
-    int proc_count = 0;
     while (NULL != (in_file = readdir(FD))) {
 
         if (!strcmp(in_file->d_name, "."))
