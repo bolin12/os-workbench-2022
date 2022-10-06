@@ -145,8 +145,6 @@ void print_pstree() {
         FILE *fp = fopen(stat_path, "r");
         if (!fp) {
             perror("File opening failed");
-
-            // exit(1);
         }
 
         int cur_idx = 0;
@@ -201,14 +199,13 @@ void print_pstree() {
         ptarr.ptarr_data[pdata_idx]->child = NULL;
         ptarr.ptarr_data[pdata_idx]->parent = NULL;
         ptarr.ptarr_data[pdata_idx]->pdata = tmp_pdata;
-        // printf("pdata_name: %s\n", pdata_store[pdata_idx].pname);
+
         pdata_idx++;
 
         free(tofree);
         fclose(fp);
         free(buffer);
         free(pname);
-        //        printf("***   this loop been on %d times! *** \n", pdata_idx);
     }
 
     /* build hashmap realted */
