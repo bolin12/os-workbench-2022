@@ -118,9 +118,9 @@ void print_pstree() {
 
             space_idx++;
         }
-        printf("pid:%d\t", pid);
-        printf("token:%-30s", pname);
-        printf("ppid:%d\n", ppid);
+        // printf("pid:%d\t", pid);
+        // printf("token:%-30s", pname);
+        // printf("ppid:%d\n", ppid);
 
         proc[proc_count].pid = pid;
         proc[proc_count].ppid = ppid;
