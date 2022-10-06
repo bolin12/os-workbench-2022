@@ -120,17 +120,14 @@ void print_pstree() {
 
             space_idx++;
         }
-        // printf("pid:%d\t", pid);
-        // printf("token:%-30s", pname);
-        // printf("ppid:%d\n", ppid);
 
         proc[proc_count].pid = pid;
         proc[proc_count].ppid = ppid;
         strcpy(proc[proc_count].proc_name, pname);
 
-        printf("pid:%d\t", proc[proc_count].pid);
-        printf("token:%-30s", proc[proc_count].proc_name);
-        printf("ppid:%d\n", proc[proc_count].ppid);
+        // printf("pid:%d\t", proc[proc_count].pid);
+        // printf("token:%-30s", proc[proc_count].proc_name);
+        // printf("ppid:%d\n", proc[proc_count].ppid);
 
         proc_count++;
 
