@@ -143,10 +143,9 @@ void print_pstree() {
 void proctree_print(int pid, int step){
     
     for(int i=0;i<proc_count;i++){
-        // printf("ppid==:%d\n",proc[i].ppid);
         if(proc[i].ppid == pid){
             for(int j=0;j<step;j++){
-                printf("      ");
+                printf("            ");
             }
             printf("%s%d\n",  proc[i].proc_name,proc[i].pid);
             proctree_print(proc[i].pid, step+1);
